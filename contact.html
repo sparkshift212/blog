@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us - Cozy Stitches</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/images/kawaii_yarn_icon_1782440622529.png">
+  <style>
+    .contact-wrap {
+      background: #fff;
+      padding: 40px;
+      border: 1px solid var(--border-color);
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 600px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .form-group label {
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .form-group input, .form-group textarea {
+      padding: 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 3px;
+      font-family: inherit;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+    .submit-btn {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background 0.3s;
+    }
+    .submit-btn:hover {
+      background-color: #13aff0;
+    }
+  </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Premium Amigurumi Patterns & Tutorials by Sarah Weaver.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yarnoodle.com/contact.html">
+  <meta property="og:title" content="Contact Us - Cozy Stitches">
+  <meta property="og:description" content="Premium Amigurumi Patterns & Tutorials by Sarah Weaver.">
+  <meta property="og:image" content="https://yarnoodle.com/images/default_og.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yarnoodle.com/contact.html">
+  <meta property="twitter:title" content="Contact Us - Cozy Stitches">
+  <meta property="twitter:description" content="Premium Amigurumi Patterns & Tutorials by Sarah Weaver.">
+  <meta property="twitter:image" content="https://yarnoodle.com/images/default_og.jpg">
+</head>
+<body class="page">
+
+  <div id="outer-wrap" class="site clr">
+    <div id="wrap" class="clr">
+
+      <!-- Header -->
+        <header class="site-header" role="banner">
+    <div class="container">
+      <a href="index.html" class="site-logo">
+        <i class="fas fa-star" style="color:var(--color-terracotta); margin-right: 8px;"></i> Yarnoodle
+      </a>
+      <nav class="main-nav" role="navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li class="has-mega-menu">
+            <a href="patterns.html" class="nav-link">Patterns <i class="fas fa-chevron-down" style="font-size:0.8em; margin-left:4px;"></i></a>
+            <div class="mega-menu">
+              <div class="container mega-menu-grid">
+                <div class="mega-menu-col">
+                  <h4>Animals</h4>
+                  <ul class="mega-menu-list">
+                    <li><a href="post_bear.html">Bears</a></li>
+                    <li><a href="post_elephant.html">Elephants</a></li>
+                    <li><a href="post_sloth.html">Sloths</a></li>
+                    <li><a href="post_capybara.html">Capybaras</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-col">
+                  <h4>Fantasy</h4>
+                  <ul class="mega-menu-list">
+                    <li><a href="post_dragon.html">Dragons</a></li>
+                    <li><a href="#">Unicorns</a></li>
+                    <li><a href="#">Monsters</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-col">
+                  <h4>Skill Level</h4>
+                  <ul class="mega-menu-list">
+                    <li><a href="#">Beginner Friendly</a></li>
+                    <li><a href="#">Intermediate</a></li>
+                    <li><a href="#">Advanced</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-col">
+                  <h4>Featured</h4>
+                  <img loading="lazy" src="images/Mama_and_baby_bears_sitting_202606260238.jpeg" alt="Featured Pattern" style="border-radius:8px; margin-bottom:10px; height:100px; object-fit:cover; width:100%;">
+                  <a href="post_bear.html" class="btn btn-primary" style="width:100%; padding: 5px; font-size: 0.9em;">Get Pattern</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="shop.html" class="nav-link">Shop PDF</a></li>
+          <li><a href="tools.html" class="nav-link">Free Tools</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        <button class="icon-btn" aria-label="Toggle Dark Mode" id="theme-toggle"><i class="fas fa-moon"></i></button>
+        <a href="shop.html" class="icon-btn" aria-label="Cart"><i class="fas fa-shopping-bag"></i></a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+      <!-- Main Content -->
+      <main id="main" class="site-main clr" role="main">
+        <div id="content-wrap" class="clr">
+
+          <div id="primary" class="content-area clr">
+            <div id="content" class="site-content clr">
+
+              <div class="contact-wrap">
+                <h1 style="margin-top: 0;">Contact Us</h1>
+                <p>Have a question about a pattern? Want to collaborate? Send me a message!</p>
+                
+                <form class="contact-form" action="#" method="POST">
+                  <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                  </div>
+                  
+                  <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <aside id="right-sidebar" class="sidebar-container widget-area clr">
+            
+            <div class="sidebar-box widget_block clr">
+              <h3 class="widget-title">About Me</h3>
+              <p style="font-size: 13px;">Hi, I'm Sarah! I design cute amigurumi patterns. Thanks for visiting my cozy little corner of the internet.</p>
+            </div>
+
+            <div class="sidebar-box widget_block clr">
+              <h3 class="widget-title">Follow Me</h3>
+              <div style="font-size: 24px; display: flex; gap: 15px; justify-content: center;">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+
+          </aside>
+
+        </div>
+      </main>
+
+      <!-- Footer -->
+        <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="site-logo"><i class="fas fa-star" style="color:var(--color-terracotta); margin-right: 8px;"></i> Yarnoodle</a>
+          <p>Bringing yarn to life, one stitch at a time. Discover premium amigurumi patterns, step-by-step tutorials, and cozy inspiration.</p>
+          <div class="share-buttons" style="margin-top: 1rem;">
+            <a href="#" class="share-btn share-pinterest" style="background:#E60023"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" class="share-btn share-facebook" style="background:#E1306C"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="share-btn share-twitter" style="background:#FF0000"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="patterns.html">Free Patterns</a></li>
+            <li><a href="shop.html">Premium PDF Shop</a></li>
+            <li><a href="tools.html">Crochet Tools</a></li>
+            <li><a href="blog.html">Blog & Guides</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#">Yarn Guide</a></li>
+            <li><a href="#">Stitch Dictionary</a></li>
+            <li><a href="#">Hook Size Chart</a></li>
+            <li><a href="#">Beginner Academy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Disclosure</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Yarnoodle Amigurumi. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+    </div>
+  </div>
+
+</body>
+</html>

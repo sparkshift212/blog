@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free Tools | Yarnoodle Amigurumi</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/images/kawaii_yarn_icon_1782440622529.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .tool-box {
+      background: var(--bg-card);
+      padding: var(--space-6);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: var(--space-6);
+      border: 1px solid var(--border-color);
+    }
+    .tool-box h2 {
+      color: var(--color-terracotta);
+      margin-bottom: var(--space-4);
+      border-bottom: 2px solid var(--color-sage-light);
+      padding-bottom: var(--space-2);
+    }
+    .form-group {
+      margin-bottom: var(--space-3);
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: var(--space-1);
+      font-weight: 600;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+    }
+    .result-box {
+      margin-top: var(--space-4);
+      padding: var(--space-4);
+      background: var(--color-sage-light);
+      border-radius: var(--radius-md);
+    }
+    .counter-display {
+      font-size: 4rem;
+      font-weight: 700;
+      text-align: center;
+      margin: var(--space-4) 0;
+      color: var(--color-sage-dark);
+    }
+    .counter-controls {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+    }
+    .counter-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      color: white;
+      transition: transform var(--transition-fast);
+    }
+    .counter-btn:hover {
+      transform: scale(1.05);
+    }
+    .btn-plus { background: var(--color-terracotta); }
+    .btn-minus { background: var(--color-sage-dark); }
+  </style>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Premium Amigurumi Patterns & Tutorials by Sarah Weaver.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yarnoodle.com/tools.html">
+  <meta property="og:title" content="Free Tools | Yarnoodle Amigurumi">
+  <meta property="og:description" content="Premium Amigurumi Patterns & Tutorials by Sarah Weaver.">
+  <meta property="og:image" content="https://yarnoodle.com/images/default_og.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yarnoodle.com/tools.html">
+  <meta property="twitter:title" content="Free Tools | Yarnoodle Amigurumi">
+  <meta property="twitter:description" content="Premium Amigurumi Patterns & Tutorials by Sarah Weaver.">
+  <meta property="twitter:image" content="https://yarnoodle.com/images/default_og.jpg">
+</head>
+<body class="home blog">
+
+  <div id="outer-wrap" class="site clr">
+    <div id="wrap" class="clr">
+
+      <!-- Header -->
+      <header class="site-header" role="banner">
+        <div class="container">
+          <a href="index.html" class="site-logo">
+            <i class="fas fa-star" style="color:var(--color-terracotta); margin-right: 8px;"></i> Yarnoodle
+          </a>
+          <nav class="main-nav" role="navigation">
+            <ul class="nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li class="has-mega-menu">
+                <a href="patterns.html" class="nav-link">Patterns <i class="fas fa-chevron-down" style="font-size:0.8em; margin-left:4px;"></i></a>
+                <div class="mega-menu">
+                  <div class="container mega-menu-grid">
+                    <div class="mega-menu-col">
+                      <h4>Animals</h4>
+                      <ul class="mega-menu-list">
+                        <li><a href="post_bear.html">Bears</a></li>
+                        <li><a href="post_elephant.html">Elephants</a></li>
+                        <li><a href="post_sloth.html">Sloths</a></li>
+                        <li><a href="post_capybara.html">Capybaras</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu-col">
+                      <h4>Fantasy</h4>
+                      <ul class="mega-menu-list">
+                        <li><a href="post_dragon.html">Dragons</a></li>
+                        <li><a href="#">Unicorns</a></li>
+                        <li><a href="#">Monsters</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu-col">
+                      <h4>Skill Level</h4>
+                      <ul class="mega-menu-list">
+                        <li><a href="#">Beginner Friendly</a></li>
+                        <li><a href="#">Intermediate</a></li>
+                        <li><a href="#">Advanced</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu-col">
+                      <h4>Featured</h4>
+                      <img loading="lazy" src="images/Mama_and_baby_bears_sitting_202606260238.jpeg" alt="Featured Pattern" style="border-radius:8px; margin-bottom:10px; height:100px; object-fit:cover; width:100%;">
+                      <a href="post_bear.html" class="btn btn-primary" style="width:100%; padding: 5px; font-size: 0.9em;">Get Pattern</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li><a href="blog.html" class="nav-link">Blog</a></li>
+              <li><a href="shop.html" class="nav-link">Shop PDF</a></li>
+              <li><a href="tools.html" class="nav-link" style="color:var(--color-terracotta);">Free Tools</a></li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <button class="icon-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+            <button class="icon-btn" aria-label="Toggle Dark Mode" id="theme-toggle"><i class="fas fa-moon"></i></button>
+            <a href="shop.html" class="icon-btn" aria-label="Cart"><i class="fas fa-shopping-bag"></i></a>
+          </div>
+          <button class="mobile-menu-btn" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main id="main" role="main">
+        <section class="section" style="padding-top: var(--space-8);">
+          <div class="container">
+            <div style="text-align: center; margin-bottom: var(--space-8); max-width: 700px; margin-left: auto; margin-right: auto;">
+              <h1 class="hero-title">Free Maker Tools</h1>
+              <p class="hero-subtitle">Make your crochet journey easier with our free handy calculators and trackers.</p>
+            </div>
+
+            <div class="grid-3">
+              
+              <!-- Yarn Calculator -->
+              <div class="tool-box">
+                <h2><i class="fas fa-calculator" style="color:var(--color-sage-dark);"></i> Yarn Calculator</h2>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem;">Estimate how many yards and skeins you need for your amigurumi project.</p>
+                <form id="yarn-calc">
+                  <div class="form-group">
+                    <label>Stitches in 1 Yard (Gauge)</label>
+                    <input type="number" id="yarn-gauge-sts" placeholder="e.g. 4" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Total Stitches in Project</label>
+                    <input type="number" id="yarn-piece-sts" placeholder="e.g. 500" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Yards per Skein</label>
+                    <input type="number" id="yarn-yardage" placeholder="e.g. 120" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary" style="width: 100%;">Calculate</button>
+                </form>
+                <div id="yarn-result" class="result-box">
+                  Enter values above to calculate.
+                </div>
+              </div>
+
+              <!-- Hook Size Converter -->
+              <div class="tool-box">
+                <h2><i class="fas fa-exchange-alt" style="color:var(--color-sage-dark);"></i> Hook Converter</h2>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem;">Quickly convert crochet hook sizes from metric (mm) to US/UK.</p>
+                <form id="stitch-converter">
+                  <div class="form-group">
+                    <label>Hook Size (mm)</label>
+                    <input type="number" step="0.25" id="hook-mm" placeholder="e.g. 4.0" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary" style="width: 100%;">Convert</button>
+                </form>
+                <div id="stitch-result" class="result-box">
+                  Enter mm size above to convert.
+                </div>
+              </div>
+
+              <!-- Row Counter -->
+              <div class="tool-box">
+                <h2><i class="fas fa-list-ol" style="color:var(--color-sage-dark);"></i> Row Counter</h2>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem;">Keep track of your rounds and rows. (Resets on refresh)</p>
+                
+                <div class="counter-display" id="row-count">0</div>
+                
+                <div class="counter-controls">
+                  <button class="counter-btn btn-minus" id="row-minus"><i class="fas fa-minus"></i></button>
+                  <button class="counter-btn btn-plus" id="row-plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <div style="text-align: center; margin-top: 1rem;">
+                  <button id="row-reset" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.8rem;">Reset</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="site-footer" role="contentinfo">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-about">
+              <a href="index.html" class="site-logo"><i class="fas fa-star" style="color:var(--color-terracotta); margin-right: 8px;"></i> Yarnoodle</a>
+              <p>Bringing yarn to life, one stitch at a time. Discover premium amigurumi patterns, step-by-step tutorials, and cozy inspiration.</p>
+              <div class="share-buttons" style="margin-top: 1rem;">
+                <a href="#" class="share-btn share-pinterest" style="background:#E60023"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#" class="share-btn share-facebook" style="background:#E1306C"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="share-btn share-twitter" style="background:#FF0000"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+            <div>
+              <h4 class="footer-title">Explore</h4>
+              <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="patterns.html">Free Patterns</a></li>
+                <li><a href="shop.html">Premium PDF Shop</a></li>
+                <li><a href="tools.html">Crochet Tools</a></li>
+                <li><a href="blog.html">Blog & Guides</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="footer-title">Resources</h4>
+              <ul class="footer-links">
+                <li><a href="#">Yarn Guide</a></li>
+                <li><a href="#">Stitch Dictionary</a></li>
+                <li><a href="#">Hook Size Chart</a></li>
+                <li><a href="#">Beginner Academy</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="footer-title">Legal</h4>
+              <ul class="footer-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Disclosure</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2026 Yarnoodle Amigurumi. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <script src="js/tools.js"></script>
+</body>
+</html>
