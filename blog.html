@@ -3,26 +3,273 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Free Amigurumi Archives - Cozy Stitches</title>
+  <title>Blog & Guides | Yarnoodle Amigurumi</title>
   <link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Premium Amigurumi Patterns & Tutorials by Sarah Weaver.">
-  
-  <!-- Open Graph / Facebook -->
+  <meta name="description" content="Crochet tips, free amigurumi patterns, and maker guides from Sarah Weaver at Yarnoodle Amigurumi.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yarnoodle.com/blog.html">
-  <meta property="og:title" content="Free Amigurumi Archives - Cozy Stitches">
-  <meta property="og:description" content="Premium Amigurumi Patterns & Tutorials by Sarah Weaver.">
+  <meta property="og:title" content="Blog & Guides | Yarnoodle Amigurumi">
+  <meta property="og:description" content="Crochet tips, free amigurumi patterns, and maker guides from Sarah Weaver.">
   <meta property="og:image" content="https://yarnoodle.com/images/default_og.jpg">
-  
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://yarnoodle.com/blog.html">
-  <meta property="twitter:title" content="Free Amigurumi Archives - Cozy Stitches">
-  <meta property="twitter:description" content="Premium Amigurumi Patterns & Tutorials by Sarah Weaver.">
-  <meta property="twitter:image" content="https://yarnoodle.com/images/default_og.jpg">
+  <meta property="twitter:title" content="Blog & Guides | Yarnoodle Amigurumi">
+  <link rel="icon" type="image/svg+xml" href="/images/kawaii_yarn_icon_1782440622529.png">
+  <style>
+    /* Blog Page Specific Styles */
+    .blog-hero {
+      background: linear-gradient(135deg, var(--color-sage-light) 0%, var(--color-cream) 100%);
+      padding: var(--space-12) 0 var(--space-8);
+      text-align: center;
+    }
+    .blog-hero h1 {
+      color: var(--color-sage-dark);
+      margin-bottom: var(--space-2);
+    }
+    .blog-hero p {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      max-width: 550px;
+      margin: 0 auto var(--space-6);
+    }
+
+    /* Filter Tabs */
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+    .filter-tab {
+      padding: 8px 22px;
+      border-radius: var(--radius-full);
+      border: 2px solid var(--color-sage);
+      background: transparent;
+      color: var(--color-sage-dark);
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all var(--transition-normal);
+    }
+    .filter-tab:hover {
+      background: var(--color-sage-light);
+    }
+    .filter-tab.active {
+      background: var(--color-terracotta);
+      border-color: var(--color-terracotta);
+      color: var(--color-white);
+    }
+
+    /* Featured Post */
+    .featured-post {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: var(--space-6);
+      align-items: center;
+      background: var(--bg-card);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      margin-bottom: var(--space-8);
+      transition: transform var(--transition-normal);
+    }
+    .featured-post:hover {
+      transform: translateY(-4px);
+    }
+    .featured-post img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 320px;
+    }
+    .featured-post-content {
+      padding: var(--space-6);
+    }
+    .featured-post-content .badge {
+      position: static;
+      display: inline-block;
+      margin-bottom: var(--space-3);
+    }
+    .featured-post-content h2 {
+      font-size: 1.8rem;
+      margin-bottom: var(--space-3);
+    }
+    .featured-post-content h2 a {
+      color: var(--text-main);
+    }
+    .featured-post-content h2 a:hover {
+      color: var(--color-terracotta);
+    }
+    .featured-post-content p {
+      color: var(--text-muted);
+      margin-bottom: var(--space-4);
+    }
+    @media (max-width: 768px) {
+      .featured-post {
+        grid-template-columns: 1fr;
+      }
+      .featured-post img {
+        min-height: 220px;
+      }
+    }
+
+    /* Blog Grid Layout */
+    .blog-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: var(--space-8);
+    }
+    @media (max-width: 992px) {
+      .blog-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Blog Card Enhanced */
+    .blog-card .card-content {
+      padding: var(--space-4);
+    }
+    .blog-card .card-category {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--color-terracotta);
+      margin-bottom: var(--space-2);
+    }
+    .blog-card .card-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: 0.85rem;
+    }
+    .blog-card .card-excerpt {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin: var(--space-2) 0 var(--space-3);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .read-link {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--color-terracotta);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .read-link:hover {
+      gap: 10px;
+    }
+
+    /* Sidebar */
+    .blog-sidebar {
+      position: sticky;
+      top: 100px;
+      align-self: start;
+    }
+    .sidebar-widget {
+      background: var(--bg-card);
+      padding: var(--space-5);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-5);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--color-gray-200);
+    }
+    .sidebar-widget h3 {
+      font-size: 1.15rem;
+      margin-bottom: var(--space-4);
+      padding-bottom: var(--space-2);
+      border-bottom: 2px solid var(--color-sage-light);
+    }
+    .popular-post-item {
+      display: flex;
+      gap: var(--space-3);
+      align-items: center;
+      margin-bottom: var(--space-3);
+      padding-bottom: var(--space-3);
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+    .popular-post-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .popular-post-item img {
+      width: 70px;
+      height: 70px;
+      border-radius: var(--radius-md);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .popular-post-item h4 {
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .popular-post-item h4 a {
+      color: var(--text-main);
+    }
+    .popular-post-item h4 a:hover {
+      color: var(--color-terracotta);
+    }
+    .popular-post-item span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .sidebar-newsletter input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      margin-bottom: var(--space-2);
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-2);
+      margin-top: var(--space-8);
+    }
+    .page-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--color-gray-200);
+      background: var(--bg-card);
+      color: var(--text-main);
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+      font-family: var(--font-sans);
+    }
+    .page-btn:hover {
+      border-color: var(--color-terracotta);
+      color: var(--color-terracotta);
+    }
+    .page-btn.active {
+      background: var(--color-terracotta);
+      border-color: var(--color-terracotta);
+      color: var(--color-white);
+    }
+
+    /* Hide filtered cards */
+    .blog-card.hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body class="archive category">
 
@@ -30,226 +277,621 @@
     <div id="wrap" class="clr">
 
       <!-- Header -->
-        <header class="site-header" role="banner">
-    <div class="container">
-      <a href="index.html" class="site-logo">
-        <i class="fas fa-star" style="color:var(--color-terracotta); margin-right: 8px;"></i> Yarnoodle
-      </a>
-      <nav class="main-nav" role="navigation">
-        <ul class="nav-list">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li class="has-mega-menu">
-            <a href="patterns.html" class="nav-link">Patterns <i class="fas fa-chevron-down" style="font-size:0.8em; margin-left:4px;"></i></a>
-            <div class="mega-menu">
-              <div class="container mega-menu-grid">
-                <div class="mega-menu-col">
-                  <h4>Animals</h4>
-                  <ul class="mega-menu-list">
-                    <li><a href="post_bear.html">Bears</a></li>
-                    <li><a href="post_elephant.html">Elephants</a></li>
-                    <li><a href="post_sloth.html">Sloths</a></li>
-                    <li><a href="post_capybara.html">Capybaras</a></li>
-                  </ul>
-                </div>
-                <div class="mega-menu-col">
-                  <h4>Fantasy</h4>
-                  <ul class="mega-menu-list">
-                    <li><a href="post_dragon.html">Dragons</a></li>
-                    <li><a href="#">Unicorns</a></li>
-                    <li><a href="#">Monsters</a></li>
-                  </ul>
-                </div>
-                <div class="mega-menu-col">
-                  <h4>Skill Level</h4>
-                  <ul class="mega-menu-list">
-                    <li><a href="#">Beginner Friendly</a></li>
-                    <li><a href="#">Intermediate</a></li>
-                    <li><a href="#">Advanced</a></li>
-                  </ul>
-                </div>
-                <div class="mega-menu-col">
-                  <h4>Featured</h4>
-                  <img loading="lazy" src="images/Mama_and_baby_bears_sitting_202606260238.jpeg" alt="Featured Pattern" style="border-radius:8px; margin-bottom:10px; height:100px; object-fit:cover; width:100%;">
-                  <a href="post_bear.html" class="btn btn-primary" style="width:100%; padding: 5px; font-size: 0.9em;">Get Pattern</a>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li><a href="blog.html" class="nav-link">Blog</a></li>
-          <li><a href="shop.html" class="nav-link">Shop PDF</a></li>
-          <li><a href="tools.html" class="nav-link">Free Tools</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions">
-        <button class="icon-btn" aria-label="Search"><i class="fas fa-search"></i></button>
-        <button class="icon-btn" aria-label="Toggle Dark Mode" id="theme-toggle"><i class="fas fa-moon"></i></button>
-        <a href="shop.html" class="icon-btn" aria-label="Cart"><i class="fas fa-shopping-bag"></i></a>
-      </div>
-      <button class="mobile-menu-btn" aria-label="Menu">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </header>
+      <header class="site-header" role="banner">
+        <div class="container">
+          <a href="index.html" class="site-logo">
+            <i class="fas fa-star" style="color:var(--color-terracotta); margin-right: 8px;"></i> Yarnoodle
+          </a>
+          <nav class="main-nav" role="navigation">
+            <ul class="nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li class="has-mega-menu">
+                <a href="patterns.html" class="nav-link">Patterns <i class="fas fa-chevron-down" style="font-size:0.8em; margin-left:4px;"></i></a>
+                <div class="mega-menu">
+                  <div class="container mega-menu-grid">
+                    <div class="mega-menu-col">
+                      <h4>Animals</h4>
+                      <ul class="mega-menu-list">
+                        <li><a href="post_bear.html">Bears</a></li>
+                        <li><a href="post_elephant.html">Elephants</a></li>
+                        <li><a href="post_sloth.html">Sloths</a></li>
+                        <li><a href="post_capybara.html">Capybaras</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu-col">
+                      <h4>Fantasy</h4>
+                      <ul class="mega-menu-list">
+                        <li><a href="post_dragon.html">Dragons</a></li>
+                        <li><a href="#">Unicorns</a></li>
+                        <li><a href="#">Monsters</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu-col">
+                      <h4>Skill Level</h4>
+                      <ul class="mega-menu-list">
+                        <li><a href="patterns.html?level=beginner">Beginner Friendly</a></li>
+                        <li><a href="patterns.html?level=intermediate">Intermediate</a></li>
+                        <li><a href="patterns.html?level=advanced">Advanced</a></li>
+                      </ul>
+                    </div>
+                    
 
-            <!-- Main Content -->
+                  </div>
+                </div>
+              </li>
+              <li><a href="blog.html" class="nav-link" style="color:var(--color-terracotta);">Blog</a></li>
+              <li><a href="shop.html" class="nav-link">Shop PDF</a></li>
+              <li><a href="tools.html" class="nav-link">Free Tools</a></li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <button class="icon-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+            <button class="icon-btn" aria-label="Toggle Dark Mode" id="theme-toggle"><i class="fas fa-moon"></i></button>
+            <a href="shop.html" class="icon-btn" aria-label="Cart"><i class="fas fa-shopping-bag"></i></a>
+          </div>
+          <button class="mobile-menu-btn" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Content -->
       <main id="main" role="main">
-        <section class="section" style="padding-top: var(--space-8);">
+
+        <!-- Blog Hero -->
+        <section class="blog-hero">
           <div class="container">
-            <div class="shop-header" style="text-align: center; margin-bottom: var(--space-6);">
-              <h1 class="hero-title">Blog & Free Patterns</h1>
-              <p class="hero-subtitle">Explore my latest free patterns, crochet tips, and behind-the-scenes.</p>
+            <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--color-terracotta); font-weight: 600; margin-bottom: var(--space-2);">Yarnoodle Blog</p>
+            <h1 class="hero-title">Tips, Tutorials & Free Patterns</h1>
+            <p>Crochet guides, yarn reviews, and step-by-step amigurumi tutorials to level up your making.</p>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs" id="filter-tabs">
+              <button class="filter-tab active" data-filter="all">All</button>
+              <button class="filter-tab" data-filter="animals">🐻 Animals</button>
+              <button class="filter-tab" data-filter="fantasy">🐉 Fantasy</button>
+              <button class="filter-tab" data-filter="tips">💡 Tips & Tricks</button>
+              <button class="filter-tab" data-filter="guides">📖 Guides</button>
             </div>
-            
-            <!-- Category Filters -->
-            <div class="flex justify-center gap-2" style="margin-bottom: var(--space-8); flex-wrap: wrap;">
-              <button class="btn btn-primary" style="padding: 5px 15px; font-size: 0.9em;">All</button>
-              <button class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9em;">Animals</button>
-              <button class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9em;">Tips & Tricks</button>
-              <button class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9em;">Roundups</button>
+          </div>
+        </section>
+
+        <section class="section" style="padding-top: var(--space-6);">
+          <div class="container">
+
+            <!-- Featured Post -->
+            <div class="featured-post" data-category="animals">
+              <img loading="lazy" src="images/Crochet_axolotl_plush_toy_202606260238_3.jpeg" alt="Chubby Baby Axolotl">
+              <div class="featured-post-content">
+                <span class="badge badge-new">Featured</span>
+                <div class="card-meta" style="margin-bottom: var(--space-2);">
+                  <span><i class="far fa-calendar-alt"></i> June 26, 2026</span> &bull;
+                  <span><i class="far fa-clock"></i> 8 min read</span>
+                </div>
+                <h2><a href="post.html">Chubby Baby Axolotl — Free Pattern + Video</a></h2>
+                <p>This adorable little axolotl works up in under two hours and makes the perfect quick gift! Includes step-by-step photos, a video walkthrough, and tips for shaping those cute little gills.</p>
+                <a href="post.html" class="btn btn-primary">Read Full Pattern</a>
+              </div>
             </div>
 
-            <div class="grid-3">
-              
-              <!-- Post 1 -->
-              <div class="card">
-                <div class="card-img-wrap">
-                  <img loading="lazy" src="images/Crochet_axolotl_plush_toy_202606260238_3.jpeg" alt="Chubby Baby Axolotl" class="card-img">
-                </div>
-                <div class="card-content">
-                  <div class="card-meta">June 26, 2026 &bull; Free Pattern</div>
-                  <h3 class="card-title"><a href="post.html">Chubby Baby Axolotl Free Pattern</a></h3>
-                  <div class="card-footer">
-                    <a href="post.html" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9em; width: 100%;">Read More</a>
+            <!-- Blog Layout: Grid + Sidebar -->
+            <div class="blog-layout">
+
+              <!-- Posts Grid -->
+              <div>
+                <div class="grid-3" id="blog-grid" style="grid-template-columns: repeat(2, 1fr);">
+
+                  <!-- Post 1 -->
+                  <div class="card blog-card" data-category="animals">
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/Crochet_amigurumi_baby_dragon_toy,_202606260238.jpeg" alt="Sleepy Baby Dragon" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-category">Animals</span>
+                      <h3 class="card-title"><a href="post_dragon.html">Sleepy Baby Dragon Tutorial</a></h3>
+                      <p class="card-excerpt">Create your own magical sleepy dragon with this detailed step-by-step tutorial and free printable checklist.</p>
+                      <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> June 20</span> &bull;
+                        <span><i class="far fa-clock"></i> 6 min</span>
+                      </div>
+                      <a href="post_dragon.html" class="read-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
                   </div>
+
+                  <!-- Post 2 -->
+                  <div class="card blog-card" data-category="animals">
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/Crochet_amigurumi_hedgehog_patte…_202606260238.jpeg" alt="Mini Hedgehog" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-category">Animals</span>
+                      <h3 class="card-title"><a href="post_hedgehog.html">Mini Hedgehog Keychain Pattern</a></h3>
+                      <p class="card-excerpt">A perfect stash buster! These little hedgehogs are so fun to make and customize with different colours.</p>
+                      <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> June 15</span> &bull;
+                        <span><i class="far fa-clock"></i> 4 min</span>
+                      </div>
+                      <a href="post_hedgehog.html" class="read-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+
+                  <!-- Post 3 -->
+                  <div class="card blog-card" data-category="animals">
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/Mama_and_baby_bears_sitting_202606260238.jpeg" alt="Mama & Baby Bear" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-category">Animals</span>
+                      <h3 class="card-title"><a href="post_bear.html">Mama & Baby Bear Free Pattern</a></h3>
+                      <p class="card-excerpt">The cutest duo! This pattern includes instructions for both the mama bear and her baby — perfect for gifting.</p>
+                      <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> June 10</span> &bull;
+                        <span><i class="far fa-clock"></i> 10 min</span>
+                      </div>
+                      <a href="post_bear.html" class="read-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+
+                  <!-- Post 4 -->
+                  <div class="card blog-card" data-category="tips">
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/Amigurumi_sloth_hanging_wooden_b…_202606260238.jpeg" alt="Sloth Tutorial" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-category">Tips & Tricks</span>
+                      <h3 class="card-title"><a href="post_sloth.html">How to Crochet Hanging Limbs</a></h3>
+                      <p class="card-excerpt">Learn how to make posable arms and legs that can grip and hang — featuring our sloth pattern.</p>
+                      <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> June 5</span> &bull;
+                        <span><i class="far fa-clock"></i> 5 min</span>
+                      </div>
+                      <a href="post_sloth.html" class="read-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+
+                  <!-- Post 5 -->
+                  <div class="card blog-card" data-category="animals">
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/Handmade_amigurumi_capybara_flow…_202606260238.jpeg" alt="Flower Capybara" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-category">Animals</span>
+                      <h3 class="card-title"><a href="post_capybara.html">Flower Crown Capybara</a></h3>
+                      <p class="card-excerpt">The internet's favourite animal gets the amigurumi treatment! Includes a tiny flower crown tutorial.</p>
+                      <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> May 28</span> &bull;
+                        <span><i class="far fa-clock"></i> 7 min</span>
+                      </div>
+                      <a href="post_capybara.html" class="read-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+
+                  <!-- Post 6 -->
+                  <div class="card blog-card" data-category="guides">
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/Hands_starting_crochet_magic_circle_202606260238.jpeg" alt="Magic Ring Guide" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-category">Guides</span>
+                      <h3 class="card-title"><a href="post_elephant.html">Perfect Magic Ring Every Time</a></h3>
+                      <p class="card-excerpt">The magic ring is the foundation of every amigurumi. Master it once and never have gaps again.</p>
+                      <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> May 20</span> &bull;
+                        <span><i class="far fa-clock"></i> 3 min</span>
+                      </div>
+                      <a href="post_elephant.html" class="read-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+
+                  <!-- Post 7 -->
+                  <div class="card blog-card" data-category="tips">
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/Close-up_photography_of_hands_crocheting_202606260238.jpeg" alt="Yarn Guide" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-category">Tips & Tricks</span>
+                      <h3 class="card-title"><a href="post_bear.html">Best Yarn for Amigurumi (Tested)</a></h3>
+                      <p class="card-excerpt">Cotton vs acrylic vs velvet — I tested them all so you don't have to. Here's my honest verdict.</p>
+                      <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> May 12</span> &bull;
+                        <span><i class="far fa-clock"></i> 4 min</span>
+                      </div>
+                      <a href="post_bear.html" class="read-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+
+                  <!-- Post 8 -->
+                  <div class="card blog-card" data-category="fantasy">
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/Three_crochet_baby_dragons_202606260238.jpeg" alt="Dragon Collection" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-category">Fantasy</span>
+                      <h3 class="card-title"><a href="post_dragon.html">Dragon Trio: 3 Colours, 1 Pattern</a></h3>
+                      <p class="card-excerpt">See how changing just the yarn colour gives you three completely different baby dragons from the same base pattern.</p>
+                      <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> May 5</span> &bull;
+                        <span><i class="far fa-clock"></i> 5 min</span>
+                      </div>
+                      <a href="post_dragon.html" class="read-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+
+
+                  <!-- Post 9 -->
+                  <div class="card blog-card" data-category="animals">
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/turtle.jpg" alt="Sweet Turtle Pattern" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-category">Animals</span>
+                      <h3 class="card-title"><a href="post_turtle.html">Sweet Turtle Pattern</a></h3>
+                      <p class="card-excerpt">Make your own sweet turtle amigurumi with this detailed crochet pattern!</p>
+                      <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> June 27</span> &bull;
+                        <span><i class="far fa-clock"></i> 5 min</span>
+                      </div>
+                      <a href="post_turtle.html" class="read-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+
+                  <!-- Post 10 -->
+                  <div class="card blog-card" data-category="animals">
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/lion.jpg" alt="Adorable Lion Pattern" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-category">Animals</span>
+                      <h3 class="card-title"><a href="post_lion.html">Adorable Lion Pattern</a></h3>
+                      <p class="card-excerpt">Create this adorable lion amigurumi with our free crochet pattern guide!</p>
+                      <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> June 27</span> &bull;
+                        <span><i class="far fa-clock"></i> 5 min</span>
+                      </div>
+                      <a href="post_lion.html" class="read-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+
+                  <!-- Post 11 -->
+                  <div class="card blog-card" data-category="animals">
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/whale.jpg" alt="Sweet Whale Pattern" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-category">Animals</span>
+                      <h3 class="card-title"><a href="post_whale.html">Sweet Whale Pattern</a></h3>
+                      <p class="card-excerpt">Learn how to crochet this sweet whale amigurumi with our easy step-by-step pattern guide!</p>
+                      <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> June 27</span> &bull;
+                        <span><i class="far fa-clock"></i> 5 min</span>
+                      </div>
+                      <a href="post_whale.html" class="read-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+
+                  <!-- Post 12 -->
+                  <div class="card blog-card" data-category="animals">
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/squirrel.jpg" alt="Fluffy Squirrel Pattern" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-category">Animals</span>
+                      <h3 class="card-title"><a href="post_squirrel.html">Fluffy Squirrel Pattern</a></h3>
+                      <p class="card-excerpt">Follow this easy crochet squirrel amigurumi pattern to make your own fluffy-tailed plush toy!</p>
+                      <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> June 27</span> &bull;
+                        <span><i class="far fa-clock"></i> 5 min</span>
+                      </div>
+                      <a href="post_squirrel.html" class="read-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+
+                  <!-- Post 13 -->
+                  <div class="card blog-card" data-category="animals">
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/hippo.jpg" alt="Cute Hippo Pattern" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-category">Animals</span>
+                      <h3 class="card-title"><a href="post_hippo.html">Cute Hippo Pattern</a></h3>
+                      <p class="card-excerpt">Make this cute hippo amigurumi with our free crochet pattern guide!</p>
+                      <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> June 27</span> &bull;
+                        <span><i class="far fa-clock"></i> 5 min</span>
+                      </div>
+                      <a href="post_hippo.html" class="read-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+
+                  <!-- Post 14 -->
+                  <div class="card blog-card" data-category="animals">
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/lamb.jpg" alt="Fluffy Lamb Pattern" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-category">Animals</span>
+                      <h3 class="card-title"><a href="post_lamb.html">Fluffy Lamb Pattern</a></h3>
+                      <p class="card-excerpt">Learn to crochet this fluffy lamb amigurumi with our beginner-friendly pattern!</p>
+                      <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> June 27</span> &bull;
+                        <span><i class="far fa-clock"></i> 5 min</span>
+                      </div>
+                      <a href="post_lamb.html" class="read-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+
+                  <!-- Post 15 -->
+                  <div class="card blog-card" data-category="animals">
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/deer.jpg" alt="Woodland Deer Pattern" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-category">Animals</span>
+                      <h3 class="card-title"><a href="post_deer.html">Woodland Deer Pattern</a></h3>
+                      <p class="card-excerpt">Follow this easy crochet deer amigurumi pattern to make your own woodland plush toy!</p>
+                      <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> June 27</span> &bull;
+                        <span><i class="far fa-clock"></i> 5 min</span>
+                      </div>
+                      <a href="post_deer.html" class="read-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+
+                  <!-- Post 16 -->
+                  <div class="card blog-card" data-category="animals">
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/raccoon.jpg" alt="Adorable Raccoon Pattern" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-category">Animals</span>
+                      <h3 class="card-title"><a href="post_raccoon.html">Adorable Raccoon Pattern</a></h3>
+                      <p class="card-excerpt">Create this adorable raccoon amigurumi with our free crochet pattern guide!</p>
+                      <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> June 27</span> &bull;
+                        <span><i class="far fa-clock"></i> 5 min</span>
+                      </div>
+                      <a href="post_raccoon.html" class="read-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                  <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
+                  <button class="page-btn active">1</button>
+                  <button class="page-btn">2</button>
+                  <button class="page-btn">3</button>
+                  <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
                 </div>
               </div>
 
-              <!-- Post 2 -->
-              <div class="card">
-                <div class="card-img-wrap">
-                  <img loading="lazy" src="images/Crochet_amigurumi_baby_dragon_toy,_202606260238.jpeg" alt="Sleepy Baby Dragon" class="card-img">
-                </div>
-                <div class="card-content">
-                  <div class="card-meta">June 20, 2026 &bull; Free Pattern</div>
-                  <h3 class="card-title"><a href="post_dragon.html">Sleepy Baby Dragon Tutorial</a></h3>
-                  <div class="card-footer">
-                    <a href="post_dragon.html" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9em; width: 100%;">Read More</a>
-                  </div>
-                </div>
-              </div>
+              <!-- Sidebar -->
+              <aside class="blog-sidebar">
 
-              <!-- Post 3 -->
-              <div class="card">
-                <div class="card-img-wrap">
-                  <img loading="lazy" src="images/Crochet_amigurumi_hedgehog_patte…_202606260238.jpeg" alt="Mini Hedgehog" class="card-img">
+                <!-- Search -->
+                <div class="sidebar-widget">
+                  <h3><i class="fas fa-search" style="color:var(--color-terracotta); margin-right: 8px;"></i> Search</h3>
+                  <form action="blog.html" method="GET" style="display:flex; gap: 6px;">
+                    <input type="text" name="search" placeholder="Search posts..." class="sidebar-search-input" required>
+                    <button type="submit" class="btn btn-primary" style="padding: 8px 14px;"><i class="fas fa-search"></i></button>
+                  </form>
                 </div>
-                <div class="card-content">
-                  <div class="card-meta">June 15, 2026 &bull; Free Pattern</div>
-                  <h3 class="card-title"><a href="post_hedgehog.html">Mini Hedgehog Pattern</a></h3>
-                  <div class="card-footer">
-                    <a href="post_hedgehog.html" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9em; width: 100%;">Read More</a>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Post 4 -->
-              <div class="card">
-                <div class="card-img-wrap">
-                  <img loading="lazy" src="images/Mama_and_baby_bears_sitting_202606260238.jpeg" alt="Mama & Baby Bear" class="card-img">
-                </div>
-                <div class="card-content">
-                  <div class="card-meta">June 10, 2026 &bull; Free Pattern</div>
-                  <h3 class="card-title"><a href="post_bear.html">Mama & Baby Bear Free Pattern</a></h3>
-                  <div class="card-footer">
-                    <a href="post_bear.html" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9em; width: 100%;">Read More</a>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Post 5 -->
-              <div class="card">
-                <div class="card-img-wrap">
-                  <img loading="lazy" src="images/Amigurumi_sloth_hanging_wooden_b…_202606260238.jpeg" alt="Hanging Sloth" class="card-img">
-                </div>
-                <div class="card-content">
-                  <div class="card-meta">June 5, 2026 &bull; Tips & Tricks</div>
-                  <h3 class="card-title"><a href="post_sloth.html">How to crochet a sloth</a></h3>
-                  <div class="card-footer">
-                    <a href="post_sloth.html" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9em; width: 100%;">Read More</a>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Post 6 -->
-              <div class="card">
-                <div class="card-img-wrap">
-                  <img loading="lazy" src="images/Handmade_amigurumi_capybara_flow…_202606260238.jpeg" alt="Flower Capybara" class="card-img">
-                </div>
-                <div class="card-content">
-                  <div class="card-meta">May 28, 2026 &bull; Free Pattern</div>
-                  <h3 class="card-title"><a href="post_capybara.html">Flower Capybara</a></h3>
-                  <div class="card-footer">
-                    <a href="post_capybara.html" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9em; width: 100%;">Read More</a>
-                  </div>
-                </div>
-              </div>
 
+                <!-- Popular Posts -->
+                <div class="sidebar-widget">
+                  <h3><i class="fas fa-fire" style="color:var(--color-terracotta); margin-right: 8px;"></i> Popular Posts</h3>
+                  <div class="popular-post-item">
+                    <img src="images/Crochet_axolotl_plush_toy_202606260238_3.jpeg" alt="Axolotl">
+                    <div>
+                      <h4><a href="post.html">Chubby Baby Axolotl</a></h4>
+                      <span><i class="far fa-eye"></i> 2.4k views</span>
+                    </div>
+                  </div>
+                  <div class="popular-post-item">
+                    <img src="images/Mama_and_baby_bears_sitting_202606260238.jpeg" alt="Bears">
+                    <div>
+                      <h4><a href="post_bear.html">Mama & Baby Bear</a></h4>
+                      <span><i class="far fa-eye"></i> 1.8k views</span>
+                    </div>
+                  </div>
+                  <div class="popular-post-item">
+                    <img src="images/Crochet_amigurumi_baby_dragon_toy,_202606260238.jpeg" alt="Dragon">
+                    <div>
+                      <h4><a href="post_dragon.html">Sleepy Baby Dragon</a></h4>
+                      <span><i class="far fa-eye"></i> 1.5k views</span>
+                    </div>
+                  </div>
+                  <div class="popular-post-item">
+                    <img src="images/Handmade_amigurumi_capybara_flow…_202606260238.jpeg" alt="Capybara">
+                    <div>
+                      <h4><a href="post_capybara.html">Flower Capybara</a></h4>
+                      <span><i class="far fa-eye"></i> 1.2k views</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="sidebar-widget" style="background: linear-gradient(135deg, var(--color-terracotta-light) 0%, var(--color-terracotta) 100%); color: white; border: none;">
+                  <h3 style="color: white; border-bottom-color: rgba(255,255,255,0.3);"><i class="fas fa-envelope" style="margin-right: 8px;"></i> Newsletter</h3>
+                  <p style="font-size: 0.9rem; opacity: 0.95; margin-bottom: var(--space-3);">Get a free mini pattern + weekly crochet tips delivered to your inbox.</p>
+                  <form onsubmit="window.handleSubscribe(event, this)">
+                    <input type="email" placeholder="Your email address" class="sidebar-newsletter" required style="width:100%; padding:10px 14px; border:none; border-radius:var(--radius-sm); margin-bottom:var(--space-2);">
+                    <button type="submit" class="btn" style="width:100%; background:white; color:var(--color-terracotta); font-weight:700;">Subscribe Free</button>
+                  </form>
+                </div>
+
+                <!-- Ad Placeholder -->
+                <div class="sidebar-widget" style="padding:0; border:none; box-shadow:none; background:transparent;">
+                  <div style="background:var(--color-gray-100); height:250px; display:flex; align-items:center; justify-content:center; color:var(--text-muted); border-radius:var(--radius-lg); font-size:0.85rem;">
+                    <span>Ad Space</span>
+                  </div>
+                </div>
+
+              </aside>
             </div>
+
           </div>
         </section>
       </main>
 
       <!-- Footer -->
-        <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-about">
-          <a href="index.html" class="site-logo"><i class="fas fa-star" style="color:var(--color-terracotta); margin-right: 8px;"></i> Yarnoodle</a>
-          <p>Bringing yarn to life, one stitch at a time. Discover premium amigurumi patterns, step-by-step tutorials, and cozy inspiration.</p>
-          <div class="share-buttons" style="margin-top: 1rem;">
-            <a href="#" class="share-btn share-pinterest" style="background:#E60023"><i class="fab fa-pinterest-p"></i></a>
-            <a href="#" class="share-btn share-facebook" style="background:#E1306C"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="share-btn share-twitter" style="background:#FF0000"><i class="fab fa-youtube"></i></a>
+      <footer class="site-footer" role="contentinfo">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-about">
+              <a href="index.html" class="site-logo"><i class="fas fa-star" style="color:var(--color-terracotta); margin-right: 8px;"></i> Yarnoodle</a>
+              <p>Bringing yarn to life, one stitch at a time. Discover premium amigurumi patterns, step-by-step tutorials, and cozy inspiration.</p>
+              <div class="share-buttons" style="margin-top: 1rem;">
+                <a href="https://www.pinterest.com/YarnoodleAmigurumi/" target="_blank" class="share-btn share-pinterest" style="background:#E60023"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#" class="share-btn share-facebook" style="background:#E1306C"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="share-btn share-twitter" style="background:#FF0000"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+            <div>
+              <h4 class="footer-title">Explore</h4>
+              <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="patterns.html">Free Patterns</a></li>
+                <li><a href="shop.html">Premium PDF Shop</a></li>
+                <li><a href="tools.html">Crochet Tools</a></li>
+                <li><a href="blog.html">Blog & Guides</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="footer-title">Resources</h4>
+              <ul class="footer-links">
+                <li><a href="#">Yarn Guide</a></li>
+                <li><a href="#">Stitch Dictionary</a></li>
+                <li><a href="#">Hook Size Chart</a></li>
+                <li><a href="#">Beginner Academy</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="footer-title">Legal</h4>
+              <ul class="footer-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Disclosure</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2026 Yarnoodle Amigurumi. All rights reserved.</p>
           </div>
         </div>
-        <div>
-          <h4 class="footer-title">Explore</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="patterns.html">Free Patterns</a></li>
-            <li><a href="shop.html">Premium PDF Shop</a></li>
-            <li><a href="tools.html">Crochet Tools</a></li>
-            <li><a href="blog.html">Blog & Guides</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer-title">Resources</h4>
-          <ul class="footer-links">
-            <li><a href="#">Yarn Guide</a></li>
-            <li><a href="#">Stitch Dictionary</a></li>
-            <li><a href="#">Hook Size Chart</a></li>
-            <li><a href="#">Beginner Academy</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer-title">Legal</h4>
-          <ul class="footer-links">
-            <li><a href="#">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Disclosure</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Yarnoodle Amigurumi. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+      </footer>
 
     </div>
   </div>
 
+  <script src="js/main.js"></script>
+  <script>
+    // Blog Filter & Pagination Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs = document.querySelectorAll('.filter-tab');
+      const cards = Array.from(document.querySelectorAll('.blog-card'));
+      const featured = document.querySelector('.featured-post');
+      const paginationContainer = document.querySelector('.pagination');
+
+      let currentFilter = 'all';
+      let currentPage = 1;
+      const itemsPerPage = 6;
+
+      function render() {
+        // 1. Filter the cards
+        const filteredCards = cards.filter(card => {
+          return currentFilter === 'all' || card.dataset.category === currentFilter;
+        });
+
+        // 2. Hide all cards first
+        cards.forEach(card => card.classList.add('hidden'));
+
+        // 3. Show only cards for the current page
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        filteredCards.slice(startIndex, endIndex).forEach(card => {
+          card.classList.remove('hidden');
+        });
+
+        // 4. Update Featured Post visibility
+        if (featured) {
+          if (currentFilter === 'all' || featured.dataset.category === currentFilter) {
+            featured.style.display = '';
+          } else {
+            featured.style.display = 'none';
+          }
+        }
+
+        // 5. Render Pagination
+        renderPagination(filteredCards.length);
+      }
+
+      function renderPagination(totalItems) {
+        if (!paginationContainer) return;
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        
+        if (totalPages <= 1) {
+          paginationContainer.style.display = 'none';
+          return;
+        }
+        
+        paginationContainer.style.display = 'flex';
+        let html = '';
+        
+        // Prev button
+        html += `<button class="page-btn" data-page="prev" ${currentPage === 1 ? 'disabled style="opacity:0.5;cursor:not-allowed;"' : ''}><i class="fas fa-chevron-left"></i></button>`;
+        
+        // Page numbers
+        for (let i = 1; i <= totalPages; i++) {
+          html += `<button class="page-btn ${currentPage === i ? 'active' : ''}" data-page="${i}">${i}</button>`;
+        }
+        
+        // Next button
+        html += `<button class="page-btn" data-page="next" ${currentPage === totalPages ? 'disabled style="opacity:0.5;cursor:not-allowed;"' : ''}><i class="fas fa-chevron-right"></i></button>`;
+        
+        paginationContainer.innerHTML = html;
+
+        // Add event listeners to new buttons
+        paginationContainer.querySelectorAll('.page-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            if(btn.hasAttribute('disabled')) return;
+            const pageAction = e.currentTarget.dataset.page;
+            if (pageAction === 'prev' && currentPage > 1) {
+              currentPage--;
+              render();
+              window.scrollTo({ top: document.querySelector('.blog-layout').offsetTop - 100, behavior: 'smooth' });
+            } else if (pageAction === 'next' && currentPage < totalPages) {
+              currentPage++;
+              render();
+              window.scrollTo({ top: document.querySelector('.blog-layout').offsetTop - 100, behavior: 'smooth' });
+            } else if (pageAction !== 'prev' && pageAction !== 'next') {
+              const selectedPage = parseInt(pageAction);
+              if (selectedPage !== currentPage) {
+                currentPage = selectedPage;
+                render();
+                window.scrollTo({ top: document.querySelector('.blog-layout').offsetTop - 100, behavior: 'smooth' });
+              }
+            }
+          });
+        });
+      }
+
+      // Filter Tab Listeners
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          currentFilter = tab.dataset.filter;
+          currentPage = 1; // Reset to page 1 on filter change
+          render();
+        });
+      });
+
+      // Initial Render
+      render();
+    });
+  </script>
 </body>
 </html>

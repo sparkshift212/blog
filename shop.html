@@ -3,237 +3,776 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Premium Shop | Yarnoodle Amigurumi</title>
+  <title>Premium PDF Shop | Yarnoodle Amigurumi</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/svg+xml" href="/images/kawaii_yarn_icon_1782440622529.png">
-  
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Premium Amigurumi Patterns & Tutorials by Sarah Weaver.">
-  
-  <!-- Open Graph / Facebook -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Shop premium ad-free printable amigurumi PDF patterns with step-by-step photos. Instant digital download.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yarnoodle.com/shop.html">
-  <meta property="og:title" content="Premium Shop | Yarnoodle Amigurumi">
-  <meta property="og:description" content="Premium Amigurumi Patterns & Tutorials by Sarah Weaver.">
+  <meta property="og:title" content="Premium PDF Shop | Yarnoodle Amigurumi">
+  <meta property="og:description" content="Shop premium ad-free printable amigurumi PDF patterns. Instant download.">
   <meta property="og:image" content="https://yarnoodle.com/images/default_og.jpg">
-  
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://yarnoodle.com/shop.html">
-  <meta property="twitter:title" content="Premium Shop | Yarnoodle Amigurumi">
-  <meta property="twitter:description" content="Premium Amigurumi Patterns & Tutorials by Sarah Weaver.">
-  <meta property="twitter:image" content="https://yarnoodle.com/images/default_og.jpg">
+  <style>
+    /* Shop Specific */
+    .shop-hero {
+      background: linear-gradient(135deg, var(--color-sage-light) 0%, var(--color-cream) 100%);
+      padding: var(--space-12) 0 var(--space-8);
+      text-align: center;
+    }
+    .shop-hero h1 { color: var(--color-sage-dark); margin-bottom: var(--space-2); }
+    .shop-hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 550px; margin: 0 auto var(--space-4); }
+
+    /* Coupon Banner */
+    .coupon-banner {
+      background: linear-gradient(90deg, var(--color-terracotta) 0%, var(--color-terracotta-dark) 100%);
+      color: white;
+      padding: 14px var(--space-4);
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+    }
+    .coupon-banner code {
+      background: rgba(255,255,255,0.25);
+      padding: 3px 10px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      margin: 0 6px;
+    }
+
+    /* Trust Strip */
+    .trust-strip {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-6);
+      flex-wrap: wrap;
+      padding: var(--space-4) 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .trust-item i {
+      color: var(--color-sage-dark);
+      font-size: 1.1rem;
+    }
+
+    /* Shop Layout */
+    .shop-layout {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: var(--space-6);
+    }
+    @media (max-width: 992px) {
+      .shop-layout { grid-template-columns: 1fr; }
+    }
+
+    /* Sidebar Filters */
+    .shop-sidebar {
+      align-self: start;
+      position: sticky;
+      top: 100px;
+    }
+    .filter-group {
+      background: var(--bg-card);
+      padding: var(--space-4);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-4);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--color-gray-200);
+    }
+    .filter-group h4 {
+      font-size: 1rem;
+      margin-bottom: var(--space-3);
+      padding-bottom: var(--space-2);
+      border-bottom: 2px solid var(--color-sage-light);
+      font-family: var(--font-sans);
+    }
+    .filter-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .filter-option input[type="checkbox"] {
+      accent-color: var(--color-terracotta);
+      width: 16px;
+      height: 16px;
+    }
+    .filter-option span {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin-left: auto;
+    }
+    .price-range {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .price-range input {
+      width: 70px;
+      padding: 6px 8px;
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    /* Sort Bar */
+    .sort-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--space-5);
+      flex-wrap: wrap;
+      gap: var(--space-3);
+    }
+    .sort-bar span {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .sort-select {
+      padding: 8px 14px;
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      background: var(--bg-card);
+      color: var(--text-main);
+    }
+    .view-toggle {
+      display: flex;
+      gap: 6px;
+    }
+    .view-btn {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--color-gray-200);
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all var(--transition-fast);
+    }
+    .view-btn.active, .view-btn:hover {
+      border-color: var(--color-terracotta);
+      color: var(--color-terracotta);
+    }
+
+    /* Product Card Enhanced */
+    .product-card {
+      position: relative;
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    }
+    .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .wishlist-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      background: rgba(255,255,255,0.9);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: all var(--transition-fast);
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+    .wishlist-btn:hover, .wishlist-btn.active { color: #E60023; }
+    .wishlist-btn.active i { font-weight: 900; }
+    .product-rating {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 6px;
+    }
+    .product-rating i { color: #FBBF24; font-size: 0.8rem; }
+    .product-rating span { font-size: 0.8rem; color: var(--text-muted); }
+    .product-specs {
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-2);
+    }
+    .spec-tag {
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      background: var(--color-sage-light);
+      border-radius: var(--radius-full);
+      color: var(--color-sage-dark);
+      font-weight: 600;
+    }
+    .quick-view-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity var(--transition-normal);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+    .product-card:hover .quick-view-overlay { opacity: 1; }
+
+    /* Quick View Modal */
+    .quickview-modal-overlay {
+      position: fixed; top:0; left:0; width:100%; height:100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: flex; align-items: center; justify-content: center;
+      padding: var(--space-4);
+      opacity: 0; visibility: hidden;
+      transition: all var(--transition-normal);
+    }
+    .quickview-modal-overlay.active { opacity: 1; visibility: visible; }
+    .quickview-modal {
+      background: var(--bg-main);
+      border-radius: var(--radius-xl);
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      box-shadow: var(--shadow-lg);
+      transform: scale(0.9);
+      transition: transform var(--transition-normal);
+    }
+    .quickview-modal-overlay.active .quickview-modal { transform: scale(1); }
+    @media (max-width: 768px) {
+      .quickview-modal { grid-template-columns: 1fr; }
+    }
+    .qv-image { border-radius: var(--radius-xl) 0 0 var(--radius-xl); }
+    .qv-image img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl) 0 0 var(--radius-xl); }
+    @media (max-width: 768px) {
+      .qv-image img { border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
+    }
+    .qv-details {
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+    .qv-close {
+      position: absolute; top: 15px; right: 15px;
+      background: var(--bg-card); border: none; width: 36px; height: 36px;
+      border-radius: var(--radius-full); font-size: 1.2rem;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow-sm); color: var(--text-main);
+    }
+
+    /* Recently Viewed */
+    .recently-viewed {
+      display: flex;
+      gap: var(--space-4);
+      overflow-x: auto;
+      padding-bottom: var(--space-2);
+    }
+    .recently-viewed .mini-card {
+      min-width: 140px;
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+      transition: transform var(--transition-fast);
+    }
+    .recently-viewed .mini-card:hover { transform: translateY(-3px); }
+    .recently-viewed .mini-card img {
+      width: 140px; height: 100px; object-fit: cover;
+    }
+    .recently-viewed .mini-card p {
+      padding: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin: 0;
+    }
+  </style>
 </head>
 <body class="archive category">
 
   <div id="outer-wrap" class="site clr">
     <div id="wrap" class="clr">
 
-      <!-- Header -->
-        <header class="site-header" role="banner">
-    <div class="container">
-      <a href="index.html" class="site-logo">
-        <i class="fas fa-star" style="color:var(--color-terracotta); margin-right: 8px;"></i> Yarnoodle
-      </a>
-      <nav class="main-nav" role="navigation">
-        <ul class="nav-list">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li class="has-mega-menu">
-            <a href="patterns.html" class="nav-link">Patterns <i class="fas fa-chevron-down" style="font-size:0.8em; margin-left:4px;"></i></a>
-            <div class="mega-menu">
-              <div class="container mega-menu-grid">
-                <div class="mega-menu-col">
-                  <h4>Animals</h4>
-                  <ul class="mega-menu-list">
-                    <li><a href="post_bear.html">Bears</a></li>
-                    <li><a href="post_elephant.html">Elephants</a></li>
-                    <li><a href="post_sloth.html">Sloths</a></li>
-                    <li><a href="post_capybara.html">Capybaras</a></li>
-                  </ul>
-                </div>
-                <div class="mega-menu-col">
-                  <h4>Fantasy</h4>
-                  <ul class="mega-menu-list">
-                    <li><a href="post_dragon.html">Dragons</a></li>
-                    <li><a href="#">Unicorns</a></li>
-                    <li><a href="#">Monsters</a></li>
-                  </ul>
-                </div>
-                <div class="mega-menu-col">
-                  <h4>Skill Level</h4>
-                  <ul class="mega-menu-list">
-                    <li><a href="#">Beginner Friendly</a></li>
-                    <li><a href="#">Intermediate</a></li>
-                    <li><a href="#">Advanced</a></li>
-                  </ul>
-                </div>
-                <div class="mega-menu-col">
-                  <h4>Featured</h4>
-                  <img loading="lazy" src="images/Mama_and_baby_bears_sitting_202606260238.jpeg" alt="Featured Pattern" style="border-radius:8px; margin-bottom:10px; height:100px; object-fit:cover; width:100%;">
-                  <a href="post_bear.html" class="btn btn-primary" style="width:100%; padding: 5px; font-size: 0.9em;">Get Pattern</a>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li><a href="blog.html" class="nav-link">Blog</a></li>
-          <li><a href="shop.html" class="nav-link">Shop PDF</a></li>
-          <li><a href="tools.html" class="nav-link">Free Tools</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions">
-        <button class="icon-btn" aria-label="Search"><i class="fas fa-search"></i></button>
-        <button class="icon-btn" aria-label="Toggle Dark Mode" id="theme-toggle"><i class="fas fa-moon"></i></button>
-        <a href="shop.html" class="icon-btn" aria-label="Cart"><i class="fas fa-shopping-bag"></i></a>
+      <!-- Coupon Banner -->
+      <div class="coupon-banner">
+        🎉 Use code <code>COZY20</code> for 20% off all bundles — Limited time only!
       </div>
-      <button class="mobile-menu-btn" aria-label="Menu">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </header>
 
-            <!-- Main Content -->
-      <main id="main" role="main">
-        <section class="section" style="padding-top: var(--space-8);">
-          <div class="container">
-            <div class="shop-header" style="text-align: center; margin-bottom: var(--space-8);">
-              <h1 class="hero-title">Premium PDF Patterns</h1>
-              <p class="hero-subtitle">Support the blog and get ad-free, printable patterns with exclusive step-by-step photos.</p>
-            </div>
-
-            <!-- Trust Badges -->
-            <div class="flex justify-center gap-4" style="margin-bottom: var(--space-8); opacity: 0.8; font-size: 0.9rem;">
-              <div class="flex items-center gap-2"><i class="fas fa-check-circle" style="color:var(--color-sage-dark);"></i> Instant Download</div>
-              <div class="flex items-center gap-2"><i class="fas fa-check-circle" style="color:var(--color-sage-dark);"></i> Mobile Friendly</div>
-              <div class="flex items-center gap-2"><i class="fas fa-check-circle" style="color:var(--color-sage-dark);"></i> Print Optimized</div>
-            </div>
-
-            <div class="grid-3">
-              
-              <!-- Product 1 -->
-              <div class="card">
-                <span class="badge" style="background:var(--color-terracotta);">Bestseller</span>
-                <div class="card-img-wrap">
-                  <img loading="lazy" src="images/Crochet_axolotl_plush_toy_202606260238.jpeg" alt="Axolotl PDF" class="card-img">
-                  <!-- Quick Preview Hover Overlay -->
-                  <div class="overlay" style="display:flex; align-items:center; justify-content:center;">
-                    <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 5px 15px;"><i class="fas fa-search-plus"></i> Quick Look</button>
-                  </div>
-                </div>
-                <div class="card-content">
-                  <h3 class="card-title"><a href="#">Chubby Baby Axolotl - Ad-Free PDF</a></h3>
-                  <div class="card-footer">
-                    <span class="card-price">$3.50</span>
-                    <button class="btn btn-primary" style="padding: 8px 15px; font-size: 0.9em;"><i class="fas fa-shopping-cart"></i> Add</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Product 2 -->
-              <div class="card">
-                <span class="badge badge-new">New</span>
-                <div class="card-img-wrap">
-                  <img loading="lazy" src="images/Crochet_amigurumi_baby_dragon_toy,_202606260238_2.jpeg" alt="Dragon PDF" class="card-img">
-                </div>
-                <div class="card-content">
-                  <h3 class="card-title"><a href="#">Sleepy Baby Dragon - Ad-Free PDF</a></h3>
-                  <div class="card-footer">
-                    <span class="card-price">$4.00</span>
-                    <button class="btn btn-primary" style="padding: 8px 15px; font-size: 0.9em;"><i class="fas fa-shopping-cart"></i> Add</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Product 3 -->
-              <div class="card">
-                <div class="card-img-wrap">
-                  <img loading="lazy" src="images/Handmade_amigurumi_capybara_flow_202606260238_3.jpeg" alt="Capybara PDF" class="card-img">
-                </div>
-                <div class="card-content">
-                  <h3 class="card-title"><a href="#">Flower Capybara - Ad-Free PDF</a></h3>
-                  <div class="card-footer">
-                    <span class="card-price">$3.50</span>
-                    <button class="btn btn-primary" style="padding: 8px 15px; font-size: 0.9em;"><i class="fas fa-shopping-cart"></i> Add</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Product 4: Bundle -->
-              <div class="card" style="border: 2px solid var(--color-sage-light);">
-                <span class="badge" style="background:var(--color-sage-dark);">Value Bundle</span>
-                <div class="card-img-wrap">
-                  <img loading="lazy" src="images/Mama_and_baby_bears_sitting_202606260238.jpeg" alt="Bear Bundle PDF" class="card-img">
-                </div>
-                <div class="card-content">
-                  <h3 class="card-title"><a href="#">Mama & Baby Bear Ultimate Bundle</a></h3>
-                  <p class="card-desc" style="font-size: 0.85rem;">Includes 2 full PDFs + bonus printable accessories sheet.</p>
-                  <div class="card-footer">
-                    <div>
-                      <span style="text-decoration:line-through; color:var(--text-muted); font-size:0.9rem; margin-right:5px;">$7.00</span>
-                      <span class="card-price">$5.00</span>
+      <!-- Header -->
+      <header class="site-header" role="banner">
+        <div class="container">
+          <a href="index.html" class="site-logo">
+            <i class="fas fa-star" style="color:var(--color-terracotta); margin-right: 8px;"></i> Yarnoodle
+          </a>
+          <nav class="main-nav" role="navigation">
+            <ul class="nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li class="has-mega-menu">
+                <a href="patterns.html" class="nav-link">Patterns <i class="fas fa-chevron-down" style="font-size:0.8em; margin-left:4px;"></i></a>
+                <div class="mega-menu">
+                  <div class="container mega-menu-grid">
+                    <div class="mega-menu-col">
+                      <h4>Animals</h4>
+                      <ul class="mega-menu-list">
+                        <li><a href="post_bear.html">Bears</a></li>
+                        <li><a href="post_elephant.html">Elephants</a></li>
+                        <li><a href="post_sloth.html">Sloths</a></li>
+                        <li><a href="post_capybara.html">Capybaras</a></li>
+                      </ul>
                     </div>
-                    <button class="btn btn-primary" style="padding: 8px 15px; font-size: 0.9em;"><i class="fas fa-shopping-cart"></i> Add</button>
+                    <div class="mega-menu-col">
+                      <h4>Fantasy</h4>
+                      <ul class="mega-menu-list">
+                        <li><a href="post_dragon.html">Dragons</a></li>
+                        <li><a href="#">Unicorns</a></li>
+                        <li><a href="#">Monsters</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu-col">
+                      <h4>Skill Level</h4>
+                      <ul class="mega-menu-list">
+                        <li><a href="patterns.html?level=beginner">Beginner Friendly</a></li>
+                        <li><a href="patterns.html?level=intermediate">Intermediate</a></li>
+                        <li><a href="patterns.html?level=advanced">Advanced</a></li>
+                      </ul>
+                    </div>
+                    
+
                   </div>
                 </div>
-              </div>
+              </li>
+              <li><a href="blog.html" class="nav-link">Blog</a></li>
+              <li><a href="shop.html" class="nav-link" style="color:var(--color-terracotta);">Shop PDF</a></li>
+              <li><a href="tools.html" class="nav-link">Free Tools</a></li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <button class="icon-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+            <button class="icon-btn" aria-label="Toggle Dark Mode" id="theme-toggle"><i class="fas fa-moon"></i></button>
+            <a href="shop.html" class="icon-btn" aria-label="Cart" style="position:relative;">
+              <i class="fas fa-shopping-bag"></i>
+              <span style="position:absolute;top:-5px;right:-8px;background:var(--color-terracotta);color:white;font-size:0.65rem;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;">2</span>
+            </a>
+          </div>
+          <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+        </div>
+      </header>
 
+      <!-- Main -->
+      <main id="main" role="main">
+
+        <!-- Shop Hero -->
+        <section class="shop-hero">
+          <div class="container">
+            <p style="font-size:0.85rem; text-transform:uppercase; letter-spacing:2px; color:var(--color-terracotta); font-weight:600; margin-bottom:var(--space-2);">Digital Pattern Shop</p>
+            <h1 class="hero-title">Premium PDF Patterns</h1>
+            <p>Ad-free, printable patterns with exclusive step-by-step photos. Instant download after purchase.</p>
+            <div class="trust-strip">
+              <div class="trust-item"><i class="fas fa-bolt"></i> Instant Download</div>
+              <div class="trust-item"><i class="fas fa-print"></i> Print Ready</div>
+              <div class="trust-item"><i class="fas fa-lock"></i> Secure Checkout</div>
+              <div class="trust-item"><i class="fas fa-undo"></i> 30-Day Refund</div>
             </div>
           </div>
         </section>
+
+        <!-- Shop Content -->
+        <section class="section" style="padding-top: var(--space-6);">
+          <div class="container">
+            <div class="shop-layout">
+
+              <!-- Sidebar Filters -->
+              <aside class="shop-sidebar">
+                <div class="filter-group">
+                  <h4><i class="fas fa-th-list" style="color:var(--color-terracotta); margin-right:6px;"></i> Categories</h4>
+                  <label class="filter-option"><input type="checkbox" checked> All <span>(12)</span></label>
+                  <label class="filter-option"><input type="checkbox"> Animals <span>(6)</span></label>
+                  <label class="filter-option"><input type="checkbox"> Fantasy <span>(3)</span></label>
+                  <label class="filter-option"><input type="checkbox"> Bundles <span>(2)</span></label>
+                  <label class="filter-option"><input type="checkbox"> Seasonal <span>(1)</span></label>
+                </div>
+                <div class="filter-group">
+                  <h4><i class="fas fa-signal" style="color:var(--color-terracotta); margin-right:6px;"></i> Difficulty</h4>
+                  <label class="filter-option"><input type="checkbox"> Beginner <span>(5)</span></label>
+                  <label class="filter-option"><input type="checkbox"> Intermediate <span>(4)</span></label>
+                  <label class="filter-option"><input type="checkbox"> Advanced <span>(3)</span></label>
+                </div>
+                <div class="filter-group">
+                  <h4><i class="fas fa-tag" style="color:var(--color-terracotta); margin-right:6px;"></i> Price</h4>
+                  <div class="price-range">
+                    <input type="number" placeholder="$0" min="0">
+                    <span>—</span>
+                    <input type="number" placeholder="$20" min="0">
+                    <button class="btn btn-primary" style="padding:5px 10px; font-size:0.8rem;">Go</button>
+                  </div>
+                </div>
+                <div class="filter-group">
+                  <h4><i class="fas fa-star" style="color:var(--color-terracotta); margin-right:6px;"></i> Rating</h4>
+                  <label class="filter-option"><input type="checkbox"> <i class="fas fa-star" style="color:#FBBF24;"></i><i class="fas fa-star" style="color:#FBBF24;"></i><i class="fas fa-star" style="color:#FBBF24;"></i><i class="fas fa-star" style="color:#FBBF24;"></i><i class="fas fa-star" style="color:#FBBF24;"></i> & Up</label>
+                  <label class="filter-option"><input type="checkbox"> <i class="fas fa-star" style="color:#FBBF24;"></i><i class="fas fa-star" style="color:#FBBF24;"></i><i class="fas fa-star" style="color:#FBBF24;"></i><i class="fas fa-star" style="color:#FBBF24;"></i> & Up</label>
+                </div>
+              </aside>
+
+              <!-- Products Area -->
+              <div>
+                <!-- Sort Bar -->
+                <div class="sort-bar">
+                  <span>Showing <strong>8</strong> of 12 products</span>
+                  <div class="flex items-center gap-2">
+                    <select class="sort-select">
+                      <option>Sort by: Featured</option>
+                      <option>Price: Low to High</option>
+                      <option>Price: High to Low</option>
+                      <option>Newest First</option>
+                      <option>Best Selling</option>
+                      <option>Top Rated</option>
+                    </select>
+                    <div class="view-toggle">
+                      <button class="view-btn active"><i class="fas fa-th"></i></button>
+                      <button class="view-btn"><i class="fas fa-list"></i></button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="grid-3" id="products-grid">
+
+                  <!-- Product 1 -->
+                  <div class="card product-card" data-price="3.50">
+                    <span class="badge" style="background:var(--color-terracotta);">Bestseller</span>
+                    <button class="wishlist-btn" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/Crochet_axolotl_plush_toy_202606260238.jpeg" alt="Axolotl PDF" class="card-img">
+                      <div class="quick-view-overlay">
+                        <button class="btn btn-secondary quick-view-btn" style="font-size:0.85rem; padding:8px 18px;" data-name="Chubby Baby Axolotl" data-price="$3.50" data-img="images/Crochet_axolotl_plush_toy_202606260238.jpeg" data-desc="This adorable axolotl works up in under 2 hours! Includes 15 pages with step-by-step photos, stitch diagrams, and a bonus colour variation guide."><i class="fas fa-eye"></i> Quick View</button>
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="product-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <span>(47)</span>
+                      </div>
+                      <h3 class="card-title"><a href="#">Chubby Baby Axolotl</a></h3>
+                      <div class="product-specs">
+                        <span class="spec-tag">Beginner</span>
+                        <span class="spec-tag">4mm Hook</span>
+                        <span class="spec-tag">15 Pages</span>
+                      </div>
+                      <div class="card-footer">
+                        <span class="card-price">$3.50</span>
+                        <button class="btn btn-primary" style="padding:8px 16px; font-size:0.85rem;"><i class="fas fa-shopping-cart"></i> Add</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Product 2 -->
+                  <div class="card product-card" data-price="4.50">
+                    <span class="badge badge-new">New</span>
+                    <button class="wishlist-btn" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/Crochet_amigurumi_baby_dragon_toy,_202606260238.jpeg" alt="Dragon PDF" class="card-img">
+                      <div class="quick-view-overlay">
+                        <button class="btn btn-secondary quick-view-btn" style="font-size:0.85rem; padding:8px 18px;" data-name="Sleepy Baby Dragon" data-price="$4.50" data-img="images/Crochet_amigurumi_baby_dragon_toy,_202606260238.jpeg" data-desc="A magical creature that's easier than you think! 20-page PDF with color-coded sections, assembly diagrams, and 3 wing variations."><i class="fas fa-eye"></i> Quick View</button>
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="product-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        <span>(32)</span>
+                      </div>
+                      <h3 class="card-title"><a href="#">Sleepy Baby Dragon</a></h3>
+                      <div class="product-specs">
+                        <span class="spec-tag">Intermediate</span>
+                        <span class="spec-tag">5mm Hook</span>
+                        <span class="spec-tag">20 Pages</span>
+                      </div>
+                      <div class="card-footer">
+                        <span class="card-price">$4.50</span>
+                        <button class="btn btn-primary" style="padding:8px 16px; font-size:0.85rem;"><i class="fas fa-shopping-cart"></i> Add</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Product 3 -->
+                  <div class="card product-card" data-price="3.50">
+                    <button class="wishlist-btn" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/Handmade_amigurumi_capybara_flow…_202606260238.jpeg" alt="Capybara PDF" class="card-img">
+                      <div class="quick-view-overlay">
+                        <button class="btn btn-secondary quick-view-btn" style="font-size:0.85rem; padding:8px 18px;" data-name="Flower Crown Capybara" data-price="$3.50" data-img="images/Handmade_amigurumi_capybara_flow…_202606260238.jpeg" data-desc="The internet's favourite animal gets the amigurumi treatment! Includes a tiny flower crown tutorial and an embroidery face guide."><i class="fas fa-eye"></i> Quick View</button>
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="product-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <span>(28)</span>
+                      </div>
+                      <h3 class="card-title"><a href="#">Flower Crown Capybara</a></h3>
+                      <div class="product-specs">
+                        <span class="spec-tag">Beginner</span>
+                        <span class="spec-tag">4mm Hook</span>
+                        <span class="spec-tag">12 Pages</span>
+                      </div>
+                      <div class="card-footer">
+                        <span class="card-price">$3.50</span>
+                        <button class="btn btn-primary" style="padding:8px 16px; font-size:0.85rem;"><i class="fas fa-shopping-cart"></i> Add</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Product 4: Bundle -->
+                  <div class="card product-card" data-price="5.00" style="border: 2px solid var(--color-sage);">
+                    <span class="badge" style="background:var(--color-sage-dark);">Save 28%</span>
+                    <button class="wishlist-btn" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/Mama_and_baby_bears_sitting_202606260238.jpeg" alt="Bear Bundle" class="card-img">
+                      <div class="quick-view-overlay">
+                        <button class="btn btn-secondary quick-view-btn" style="font-size:0.85rem; padding:8px 18px;" data-name="Mama & Baby Bear Bundle" data-price="$5.00" data-img="images/Mama_and_baby_bears_sitting_202606260238.jpeg" data-desc="Get both the Mama Bear and Baby Bear patterns in one bundle — plus a bonus accessories sheet with 4 outfits. Save 28% vs buying separately!"><i class="fas fa-eye"></i> Quick View</button>
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="product-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <span>(51)</span>
+                      </div>
+                      <h3 class="card-title"><a href="#">Mama & Baby Bear Bundle</a></h3>
+                      <div class="product-specs">
+                        <span class="spec-tag">2 Patterns</span>
+                        <span class="spec-tag">Bonus Sheet</span>
+                      </div>
+                      <div class="card-footer">
+                        <div>
+                          <span style="text-decoration:line-through; color:var(--text-muted); font-size:0.85rem; margin-right:4px;">$7.00</span>
+                          <span class="card-price">$5.00</span>
+                        </div>
+                        <button class="btn btn-primary" style="padding:8px 16px; font-size:0.85rem;"><i class="fas fa-shopping-cart"></i> Add</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Product 5 -->
+                  <div class="card product-card" data-price="3.50">
+                    <button class="wishlist-btn" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/Crochet_amigurumi_hedgehog_patte…_202606260238.jpeg" alt="Hedgehog PDF" class="card-img">
+                      <div class="quick-view-overlay">
+                        <button class="btn btn-secondary quick-view-btn" style="font-size:0.85rem; padding:8px 18px;" data-name="Mini Hedgehog Keychain" data-price="$3.50" data-img="images/Crochet_amigurumi_hedgehog_patte…_202606260238.jpeg" data-desc="The perfect stash buster! Make in under an hour. Includes 3 size variations and scarf add-on instructions."><i class="fas fa-eye"></i> Quick View</button>
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="product-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        <span>(19)</span>
+                      </div>
+                      <h3 class="card-title"><a href="#">Mini Hedgehog Keychain</a></h3>
+                      <div class="product-specs">
+                        <span class="spec-tag">Beginner</span>
+                        <span class="spec-tag">3.5mm Hook</span>
+                        <span class="spec-tag">8 Pages</span>
+                      </div>
+                      <div class="card-footer">
+                        <span class="card-price">$3.50</span>
+                        <button class="btn btn-primary" style="padding:8px 16px; font-size:0.85rem;"><i class="fas fa-shopping-cart"></i> Add</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Product 6 -->
+                  <div class="card product-card" data-price="4.00">
+                    <button class="wishlist-btn" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                    <div class="card-img-wrap">
+                      <img loading="lazy" src="images/Amigurumi_sloth_hanging_wooden_b…_202606260238.jpeg" alt="Sloth PDF" class="card-img">
+                      <div class="quick-view-overlay">
+                        <button class="btn btn-secondary quick-view-btn" style="font-size:0.85rem; padding:8px 18px;" data-name="Hanging Sloth" data-price="$4.00" data-img="images/Amigurumi_sloth_hanging_wooden_b…_202606260238.jpeg" data-desc="This sloth can hang from anything! Wire-armature instructions included so the arms are fully posable."><i class="fas fa-eye"></i> Quick View</button>
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="product-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <span>(35)</span>
+                      </div>
+                      <h3 class="card-title"><a href="#">Hanging Sloth</a></h3>
+                      <div class="product-specs">
+                        <span class="spec-tag">Intermediate</span>
+                        <span class="spec-tag">4.5mm Hook</span>
+                        <span class="spec-tag">18 Pages</span>
+                      </div>
+                      <div class="card-footer">
+                        <span class="card-price">$4.00</span>
+                        <button class="btn btn-primary" style="padding:8px 16px; font-size:0.85rem;"><i class="fas fa-shopping-cart"></i> Add</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Recently Viewed -->
+                <div style="margin-top: var(--space-8);">
+                  <h3 style="margin-bottom: var(--space-4);"><i class="fas fa-history" style="color:var(--color-terracotta); margin-right:8px;"></i> Recently Viewed</h3>
+                  <div class="recently-viewed">
+                    <a href="#" class="mini-card">
+                      <img loading="lazy" src="images/Crochet_axolotl_plush_toy_202606260238_3.jpeg" alt="Axolotl">
+                      <p>Baby Axolotl</p>
+                    </a>
+                    <a href="#" class="mini-card">
+                      <img loading="lazy" src="images/Mama_and_baby_bears_sitting_202606260238_2.jpeg" alt="Bears">
+                      <p>Bear Bundle</p>
+                    </a>
+                    <a href="#" class="mini-card">
+                      <img loading="lazy" src="images/Three_crochet_baby_dragons_202606260238.jpeg" alt="Dragons">
+                      <p>Dragon Trio</p>
+                    </a>
+                    <a href="#" class="mini-card">
+                      <img loading="lazy" src="images/Crochet_hedgehog_wearing_scarf_b…_202606260238.jpeg" alt="Hedgehog">
+                      <p>Hedgehog</p>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
       </main>
 
-      <!-- Footer -->
-        <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-about">
-          <a href="index.html" class="site-logo"><i class="fas fa-star" style="color:var(--color-terracotta); margin-right: 8px;"></i> Yarnoodle</a>
-          <p>Bringing yarn to life, one stitch at a time. Discover premium amigurumi patterns, step-by-step tutorials, and cozy inspiration.</p>
-          <div class="share-buttons" style="margin-top: 1rem;">
-            <a href="#" class="share-btn share-pinterest" style="background:#E60023"><i class="fab fa-pinterest-p"></i></a>
-            <a href="#" class="share-btn share-facebook" style="background:#E1306C"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="share-btn share-twitter" style="background:#FF0000"><i class="fab fa-youtube"></i></a>
+      <!-- Quick View Modal -->
+      <div class="quickview-modal-overlay" id="quickview-overlay">
+        <div class="quickview-modal" style="position:relative;">
+          <button class="qv-close" id="qv-close"><i class="fas fa-times"></i></button>
+          <div class="qv-image">
+            <img id="qv-img" src="" alt="Quick View">
+          </div>
+          <div class="qv-details">
+            <h2 id="qv-name" style="font-size:1.5rem;"></h2>
+            <div class="product-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>(47 reviews)</span>
+            </div>
+            <p id="qv-price" style="font-size:1.5rem; font-weight:700; color:var(--color-sage-dark);"></p>
+            <p id="qv-desc" style="color:var(--text-muted); font-size:0.95rem;"></p>
+            <div class="product-specs">
+              <span class="spec-tag">Instant Download</span>
+              <span class="spec-tag">PDF Format</span>
+              <span class="spec-tag">Print Ready</span>
+            </div>
+            <button class="btn btn-primary" style="width:100%; margin-top:auto;"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            <button class="btn btn-outline" style="width:100%;"><i class="far fa-heart"></i> Add to Wishlist</button>
           </div>
         </div>
-        <div>
-          <h4 class="footer-title">Explore</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="patterns.html">Free Patterns</a></li>
-            <li><a href="shop.html">Premium PDF Shop</a></li>
-            <li><a href="tools.html">Crochet Tools</a></li>
-            <li><a href="blog.html">Blog & Guides</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer-title">Resources</h4>
-          <ul class="footer-links">
-            <li><a href="#">Yarn Guide</a></li>
-            <li><a href="#">Stitch Dictionary</a></li>
-            <li><a href="#">Hook Size Chart</a></li>
-            <li><a href="#">Beginner Academy</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer-title">Legal</h4>
-          <ul class="footer-links">
-            <li><a href="#">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Disclosure</a></li>
-          </ul>
-        </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Yarnoodle Amigurumi. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+
+      <!-- Footer -->
+      <footer class="site-footer" role="contentinfo">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-about">
+              <a href="index.html" class="site-logo"><i class="fas fa-star" style="color:var(--color-terracotta); margin-right: 8px;"></i> Yarnoodle</a>
+              <p>Bringing yarn to life, one stitch at a time. Discover premium amigurumi patterns, step-by-step tutorials, and cozy inspiration.</p>
+              <div class="share-buttons" style="margin-top: 1rem;">
+                <a href="https://www.pinterest.com/YarnoodleAmigurumi/" target="_blank" class="share-btn share-pinterest" style="background:#E60023"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#" class="share-btn share-facebook" style="background:#E1306C"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="share-btn share-twitter" style="background:#FF0000"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+            <div>
+              <h4 class="footer-title">Explore</h4>
+              <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="patterns.html">Free Patterns</a></li>
+                <li><a href="shop.html">Premium PDF Shop</a></li>
+                <li><a href="tools.html">Crochet Tools</a></li>
+                <li><a href="blog.html">Blog & Guides</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="footer-title">Resources</h4>
+              <ul class="footer-links">
+                <li><a href="#">Yarn Guide</a></li>
+                <li><a href="#">Stitch Dictionary</a></li>
+                <li><a href="#">Hook Size Chart</a></li>
+                <li><a href="#">Beginner Academy</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="footer-title">Legal</h4>
+              <ul class="footer-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Disclosure</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2026 Yarnoodle Amigurumi. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
 
     </div>
   </div>
 
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Wishlist Toggle
+      document.querySelectorAll('.wishlist-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          btn.classList.toggle('active');
+          const icon = btn.querySelector('i');
+          if (btn.classList.contains('active')) {
+            icon.className = 'fas fa-heart';
+          } else {
+            icon.className = 'far fa-heart';
+          }
+        });
+      });
+
+      // Quick View Modal
+      const overlay = document.getElementById('quickview-overlay');
+      const closeBtn = document.getElementById('qv-close');
+
+      document.querySelectorAll('.quick-view-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          document.getElementById('qv-img').src = btn.dataset.img;
+          document.getElementById('qv-name').textContent = btn.dataset.name;
+          document.getElementById('qv-price').textContent = btn.dataset.price;
+          document.getElementById('qv-desc').textContent = btn.dataset.desc;
+          overlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      const closeQV = () => {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      };
+      closeBtn.addEventListener('click', closeQV);
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeQV();
+      });
+    });
+  </script>
 </body>
 </html>

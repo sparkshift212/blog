@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Environment variables — NEVER commit secrets
+.env
+
+# Database (regenerated at runtime)
+storage/database.db
+storage/*.db
+
+# Generated output (blog posts, sitemap)
+generated/
+!generated/.gitkeep
+
+# Logs (regenerated at runtime)
+logs/*.log
+!logs/.gitkeep
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Scratch / syntax check helper
+check_syntax.py

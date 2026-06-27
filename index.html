@@ -63,16 +63,13 @@
                 <div class="mega-menu-col">
                   <h4>Skill Level</h4>
                   <ul class="mega-menu-list">
-                    <li><a href="#">Beginner Friendly</a></li>
-                    <li><a href="#">Intermediate</a></li>
-                    <li><a href="#">Advanced</a></li>
+                    <li><a href="patterns.html?level=beginner">Beginner Friendly</a></li>
+                    <li><a href="patterns.html?level=intermediate">Intermediate</a></li>
+                    <li><a href="patterns.html?level=advanced">Advanced</a></li>
                   </ul>
                 </div>
-                <div class="mega-menu-col">
-                  <h4>Featured</h4>
-                  <img loading="lazy" src="images/Mama_and_baby_bears_sitting_202606260238.jpeg" alt="Featured Pattern" style="border-radius:8px; margin-bottom:10px; height:100px; object-fit:cover; width:100%;">
-                  <a href="post_bear.html" class="btn btn-primary" style="width:100%; padding: 5px; font-size: 0.9em;">Get Pattern</a>
-                </div>
+                
+
               </div>
             </div>
           </li>
@@ -105,6 +102,64 @@
                 <a href="shop.html" class="btn btn-primary">Shop Patterns</a>
                 <a href="patterns.html" class="btn btn-outline">Free Patterns</a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- From the Blog -->
+        <section class="section">
+          <div class="container">
+            <h2 class="section-title">From the Blog</h2>
+            <div class="grid-3">
+
+              <!-- Blog 1 -->
+              <div class="card">
+                <div class="card-img-wrap">
+                  <img loading="lazy" src="images/Hands_crocheting_elephant_body_202606260238.jpeg" alt="How to Start Amigurumi" class="card-img">
+                </div>
+                <div class="card-content">
+                  <div class="card-meta">June 24, 2026 &bull; 5 min read</div>
+                  <h3 class="card-title"><a href="post_elephant.html">Complete Beginner's Guide to Amigurumi</a></h3>
+                  <p class="card-desc">Everything you need to know to crochet your very first amigurumi — from choosing yarn to stuffing and finishing.</p>
+                  <div class="card-footer">
+                    <a href="post_elephant.html" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9em;">Read More</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Blog 2 -->
+              <div class="card">
+                <div class="card-img-wrap">
+                  <img loading="lazy" src="images/Close-up_photography_of_hands_crocheting_202606260238.jpeg" alt="Best Yarn for Amigurumi" class="card-img">
+                </div>
+                <div class="card-content">
+                  <div class="card-meta">June 20, 2026 &bull; 4 min read</div>
+                  <h3 class="card-title"><a href="post_bear.html">Best Yarn for Amigurumi: A Maker's Honest Guide</a></h3>
+                  <p class="card-desc">Cotton vs acrylic vs velvet — which yarn gives the best results? I tested them all so you don't have to.</p>
+                  <div class="card-footer">
+                    <a href="post_bear.html" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9em;">Read More</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Blog 3 -->
+              <div class="card">
+                <div class="card-img-wrap">
+                  <img loading="lazy" src="images/Hands_starting_crochet_magic_circle_202606260238.jpeg" alt="Magic Ring Tutorial" class="card-img">
+                </div>
+                <div class="card-content">
+                  <div class="card-meta">June 16, 2026 &bull; 3 min read</div>
+                  <h3 class="card-title"><a href="post_capybara.html">How to Make a Perfect Magic Ring Every Time</a></h3>
+                  <p class="card-desc">The magic ring is the foundation of every amigurumi. Master it once and your projects will never have gaps again.</p>
+                  <div class="card-footer">
+                    <a href="post_capybara.html" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9em;">Read More</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div style="text-align: center; margin-top: var(--space-6);">
+              <a href="blog.html" class="btn btn-primary">View All Posts &rarr;</a>
             </div>
           </div>
         </section>
@@ -188,12 +243,13 @@
           </div>
         </section>
 
+
         <!-- Newsletter -->
         <div class="container">
           <div class="newsletter-section">
             <h2>Join the Yarnoodle Family</h2>
             <p style="opacity: 0.9;">Get a free exclusive pattern when you subscribe, plus weekly tips and discounts.</p>
-            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+            <form class="newsletter-form" onsubmit="window.handleSubscribe(event, this)">
               <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
               <button type="submit" class="btn btn-primary" style="border-radius: var(--radius-full);">Subscribe</button>
             </form>
@@ -210,7 +266,7 @@
           <a href="index.html" class="site-logo"><i class="fas fa-star" style="color:var(--color-terracotta); margin-right: 8px;"></i> Yarnoodle</a>
           <p>Bringing yarn to life, one stitch at a time. Discover premium amigurumi patterns, step-by-step tutorials, and cozy inspiration.</p>
           <div class="share-buttons" style="margin-top: 1rem;">
-            <a href="#" class="share-btn share-pinterest" style="background:#E60023"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://www.pinterest.com/YarnoodleAmigurumi/" target="_blank" class="share-btn share-pinterest" style="background:#E60023"><i class="fab fa-pinterest-p"></i></a>
             <a href="#" class="share-btn share-facebook" style="background:#E1306C"><i class="fab fa-instagram"></i></a>
             <a href="#" class="share-btn share-twitter" style="background:#FF0000"><i class="fab fa-youtube"></i></a>
           </div>

@@ -1,149 +1,108 @@
-# Yarnoodle Amigurumi --- Website Upgrade Master Prompt
+# Yarnoodle Premium Website & Store Upgrade Prompt
 
-You are a senior UI/UX designer, full-stack developer, SEO expert, CRO
-specialist, and branding consultant.
+## Role
 
-I already have a crochet/amigurumi website called **Yarnoodle
-Amigurumi**.
+You are a Senior Full-Stack Developer, UI/UX Designer, CRO Expert, SEO
+Specialist, and E-commerce Architect.
 
-Your mission is NOT to redesign only the homepage.
+Work on my existing website. Do not rebuild from scratch. Reuse existing
+code whenever possible.
 
-Your mission is to transform the entire website into a premium, modern,
-Pinterest-worthy, Etsy-inspired brand that looks like a **\$100,000
-business**.
+Transform it into a premium crochet marketplace comparable to Etsy,
+LoveCrafts, Ribblr and a modern Shopify store.
 
-## Website Goals
+## Brand
 
--   Premium handmade brand
--   Cute but elegant
--   Extremely fast
--   Mobile-first
--   SEO optimized
--   High conversion rate
--   Optimized for Google Discover and Pinterest
--   Ready for Mediavine and affiliate marketing
--   Ready to sell digital PDF patterns
+-   Yarnoodle Amigurumi
+-   Primary: #A8B79A
+-   Secondary: #D9835F
+-   Background: #FFF9F4
+-   Style: Premium, Cute, Handmade, Scandinavian, Cozy, Minimal.
 
-## Brand Identity
-
--   Brand: Yarnoodle Amigurumi
--   Colors:
-    -   Sage Green (#A8B79A)
-    -   Terracotta (#D9835F)
-    -   Cream (#FFF9F4)
-
-Style: - Cozy - Minimal - Scandinavian - Handmade - Kawaii - Premium
-
-## Upgrade Every Page
+## Upgrade
 
 -   Homepage
 -   Header
--   Mega Menu
--   Hero Section
--   Featured Patterns
--   Categories
--   Trending Section
--   New Arrivals
--   Premium PDF Shop
--   Free Patterns
--   Author Section
--   Testimonials
--   Newsletter
 -   Footer
+-   Navigation
+-   Hero
+-   Cards
+-   Buttons
+-   Typography
+-   Animations
+-   Responsive Design
+-   Dark Mode
+-   Search
+-   Sticky Header
 
-## Improve Blog Pages
+## Store
 
--   Better typography
--   Reading progress bar
--   Sticky table of contents
--   Share buttons
--   Pinterest Save button
--   FAQ
--   Related patterns
--   Sticky sidebar
--   Breadcrumbs
+Add: - Wishlist - Filters - Categories - Reviews - Ratings - Coupons -
+Bundles - Related Products - Recently Viewed - Sticky Add to Cart -
+Product Gallery - Image Zoom - Digital Downloads - Download History -
+Customer Dashboard
 
-## Upgrade Shop
+## Product Page
 
--   Better product cards
--   Product badges
--   Wishlist
--   Quick Preview
--   Bundle offers
--   Reviews
--   Trust badges
--   Sticky Add to Cart
--   Upsells
--   Recently viewed
+Include: - Gallery - Description - Materials - Difficulty - Hook Size -
+Yarn Weight - Finished Size - PDF Preview - Video Tutorial - FAQ -
+Reviews - Pinterest Button - Cross Sell - Upsell
+
+## Blog
+
+Add: - Reading Progress - Table of Contents - Author Box - Related
+Posts - Newsletter - FAQ - Breadcrumbs - Reading Time
 
 ## SEO
 
--   Schema.org
--   FAQ Schema
--   Breadcrumb Schema
--   Open Graph
--   Twitter Cards
--   Canonical URLs
--   XML Sitemap
--   Robots.txt
--   Internal Linking
--   Image Optimization
--   Lazy Loading
-
-## Performance
-
-Target: - 95+ Lighthouse - Accessibility WCAG AA - Fast Core Web Vitals
-
-## New Pages
-
--   About
--   Privacy Policy
--   Terms
--   Disclosure
--   DMCA
--   Resources
--   Yarn Guide
--   Crochet Stitches Guide
--   Crochet Hook Size Chart
--   Beginner Academy
--   Printable Library
--   Free Crochet Tools
+Implement: - Schema.org - FAQ Schema - Breadcrumb Schema - Article
+Schema - Open Graph - Twitter Cards - Canonical URLs - Meta Titles -
+Meta Descriptions - XML Sitemap - Robots.txt - Internal Linking - Image
+Optimization - Lazy Loading - Core Web Vitals
 
 ## Free Tools
 
 -   Yarn Calculator
--   Stitch Calculator
+-   Hook Converter
+-   Stitch Counter
 -   Row Counter
 -   Yarn Weight Converter
--   Hook Size Converter
 -   Amigurumi Size Calculator
 
-## Monetization
+## User Features
 
--   Affiliate Widgets
--   Display Ads
--   Email Lead Magnets
--   Premium PDFs
--   Membership
--   Pattern Bundles
+-   Login
+-   Register
+-   Favorites
+-   Orders
+-   Downloads
+-   Notifications
+-   Profile
 
-## UX Improvements
+## Email
 
--   Smooth animations
--   Skeleton loading
--   Search autocomplete
--   Floating mobile menu
--   Sticky CTA
--   Dark Mode
+-   Newsletter
+-   Welcome Email
+-   Abandoned Cart
+-   Discount Email
 
-## Final Deliverables
+## Affiliate & Ads
 
-1.  Score the current website from 1--100.
-2.  List every weakness.
-3.  Explain the SEO and conversion impact.
-4.  Propose the best solution for each issue.
-5.  Build a complete redesign roadmap.
-6.  Implement improvements step by step.
-7.  Generate production-ready HTML, CSS, and JavaScript.
-8.  Keep improving until the site feels comparable to Etsy, LoveCrafts,
-    Ribblr, and a premium Shopify store.
+-   Affiliate widgets
+-   Recommended yarn and hooks
+-   Google AdSense ready
+-   Mediavine ready
+-   Raptive ready
+
+## Admin Dashboard
+
+Manage: - Products - Orders - Customers - Blog Posts - Categories -
+Coupons - Analytics - Downloads
+
+## Rules
+
+-   Never break existing functionality.
+-   Improve page by page.
+-   Explain every change.
+-   Generate production-ready HTML, CSS and JavaScript.
+-   Wait for my approval before continuing.

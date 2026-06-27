@@ -63,16 +63,13 @@
                 <div class="mega-menu-col">
                   <h4>Skill Level</h4>
                   <ul class="mega-menu-list">
-                    <li><a href="#">Beginner Friendly</a></li>
-                    <li><a href="#">Intermediate</a></li>
-                    <li><a href="#">Advanced</a></li>
+                    <li><a href="patterns.html?level=beginner">Beginner Friendly</a></li>
+                    <li><a href="patterns.html?level=intermediate">Intermediate</a></li>
+                    <li><a href="patterns.html?level=advanced">Advanced</a></li>
                   </ul>
                 </div>
-                <div class="mega-menu-col">
-                  <h4>Featured</h4>
-                  <img loading="lazy" src="images/Mama_and_baby_bears_sitting_202606260238.jpeg" alt="Featured Pattern" style="border-radius:8px; margin-bottom:10px; height:100px; object-fit:cover; width:100%;">
-                  <a href="post_bear.html" class="btn btn-primary" style="width:100%; padding: 5px; font-size: 0.9em;">Get Pattern</a>
-                </div>
+                
+
               </div>
             </div>
           </li>
@@ -112,7 +109,7 @@
             <div class="grid-3">
               
               <!-- Post 1 -->
-              <div class="card">
+              <div class="card pattern-card" data-level="beginner" data-category="animals">
                 <div class="card-img-wrap">
                   <img loading="lazy" src="images/Crochet_axolotl_plush_toy_202606260238_3.jpeg" alt="Chubby Baby Axolotl" class="card-img">
                 </div>
@@ -126,7 +123,7 @@
               </div>
 
               <!-- Post 2 -->
-              <div class="card">
+              <div class="card pattern-card" data-level="intermediate" data-category="fantasy">
                 <div class="card-img-wrap">
                   <img loading="lazy" src="images/Crochet_amigurumi_baby_dragon_toy,_202606260238.jpeg" alt="Sleepy Baby Dragon" class="card-img">
                 </div>
@@ -140,7 +137,7 @@
               </div>
 
               <!-- Post 3 -->
-              <div class="card">
+              <div class="card pattern-card" data-level="beginner" data-category="animals">
                 <div class="card-img-wrap">
                   <img loading="lazy" src="images/Crochet_amigurumi_hedgehog_patte…_202606260238.jpeg" alt="Mini Hedgehog" class="card-img">
                 </div>
@@ -154,7 +151,7 @@
               </div>
               
               <!-- Post 4 -->
-              <div class="card">
+              <div class="card pattern-card" data-level="intermediate" data-category="animals">
                 <div class="card-img-wrap">
                   <img loading="lazy" src="images/Mama_and_baby_bears_sitting_202606260238.jpeg" alt="Mama & Baby Bear" class="card-img">
                 </div>
@@ -168,7 +165,7 @@
               </div>
               
               <!-- Post 5 -->
-              <div class="card">
+              <div class="card pattern-card" data-level="advanced" data-category="tips">
                 <div class="card-img-wrap">
                   <img loading="lazy" src="images/Amigurumi_sloth_hanging_wooden_b…_202606260238.jpeg" alt="Hanging Sloth" class="card-img">
                 </div>
@@ -182,7 +179,7 @@
               </div>
               
               <!-- Post 6 -->
-              <div class="card">
+              <div class="card pattern-card" data-level="beginner" data-category="animals">
                 <div class="card-img-wrap">
                   <img loading="lazy" src="images/Handmade_amigurumi_capybara_flow…_202606260238.jpeg" alt="Flower Capybara" class="card-img">
                 </div>
@@ -208,7 +205,7 @@
           <a href="index.html" class="site-logo"><i class="fas fa-star" style="color:var(--color-terracotta); margin-right: 8px;"></i> Yarnoodle</a>
           <p>Bringing yarn to life, one stitch at a time. Discover premium amigurumi patterns, step-by-step tutorials, and cozy inspiration.</p>
           <div class="share-buttons" style="margin-top: 1rem;">
-            <a href="#" class="share-btn share-pinterest" style="background:#E60023"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://www.pinterest.com/YarnoodleAmigurumi/" target="_blank" class="share-btn share-pinterest" style="background:#E60023"><i class="fab fa-pinterest-p"></i></a>
             <a href="#" class="share-btn share-facebook" style="background:#E1306C"><i class="fab fa-instagram"></i></a>
             <a href="#" class="share-btn share-twitter" style="background:#FF0000"><i class="fab fa-youtube"></i></a>
           </div>
@@ -252,5 +249,53 @@
     </div>
   </div>
 
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const levelFilter = urlParams.get('level');
+      
+      const cards = document.querySelectorAll('.pattern-card');
+      const categoryButtons = document.querySelectorAll('.flex.justify-center button');
+
+      if (categoryButtons.length >= 4) {
+        categoryButtons[0].dataset.filter = "all";
+        categoryButtons[1].dataset.filter = "animals";
+        categoryButtons[2].dataset.filter = "tips";
+        categoryButtons[3].dataset.filter = "roundups";
+      }
+      
+      function filterCards(level, category) {
+        cards.forEach(card => {
+          let show = true;
+          if (level && level !== 'all' && card.dataset.level !== level) show = false;
+          if (category && category !== 'all' && card.dataset.category !== category) show = false;
+          
+          card.style.display = show ? 'block' : 'none';
+        });
+      }
+
+      // Initial filter based on URL
+      if (levelFilter) {
+        filterCards(levelFilter, 'all');
+      }
+
+      // Button click logic
+      categoryButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          categoryButtons.forEach(b => {
+            b.classList.remove('btn-primary');
+            b.classList.add('btn-outline');
+          });
+          btn.classList.remove('btn-outline');
+          btn.classList.add('btn-primary');
+          
+          filterCards('all', btn.dataset.filter);
+        });
+      });
+    });
+  </script>
 </body>
+
 </html>
